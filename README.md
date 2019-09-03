@@ -1,12 +1,7 @@
 # Charts with SwiftUI
 
-For this app Xcode 11 Beta 4 and MacOS Catalina Beta 4 are required.
+For this app Xcode 11 Beta 7 and MacOS Catalina Beta 7 are required.
  
-- Note: I cannot upgrade the code to Xcode Beta 5 and MacOS Catalina Beta 5, 
-   because there is a major bug in the Path struct, that will crash any application that uses it. 
-   Apple has disclosed the problem in their Release Notes, so I am hopeful they will fix it by the time the next beta arrives.
-
-## One chart is ChartView,
 ![ChartView](https://bestkora.com/IosDeveloper/wp-content/uploads/2019/07/Screenshot-2019-07-15-at-11.54.23-1.png)
 
 ## which consists of:
