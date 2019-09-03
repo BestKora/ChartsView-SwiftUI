@@ -6,12 +6,12 @@ For this app Xcode 11 Beta 7 and MacOS Catalina Beta 7 are required.
 
 ## which consists of:
 
--  GraphsForChart,
--  YTickerView, 
--  IndicatorView,
--  TickerView, 
--  RangeView, 
--  CheckMarksView.
+- GraphsForChart,
+- YTickerView, 
+- IndicatorView,
+- TickerView, 
+- RangeView, 
+- CheckMarksView.
 
 
 ## Combines several charts in three ways 
