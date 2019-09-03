@@ -40,12 +40,13 @@ struct CheckMarksView : View {
                 } // Group
                     .frame(height: 10, alignment: .leading)
                     .padding()
-                    .border(self.colorFor(indexLine: self.lineInex(line: line)), width: 4, cornerRadius: 10)
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 4).foregroundColor(self.colorFor(indexLine: self.lineInex(line: line))))
+                  //  .border(self.colorFor(indexLine: self.lineInex(line: line)), width: 4, cornerRadius: 10)
                     .background(!self.userData.charts[self.chartIndex].lines[self.lineInex(line: line)].isHidden ? self.colorFor(indexLine: self.lineInex(line: line)) : .white)
                     .cornerRadius(10)
-                    .tapAction ({
+                    .onTapGesture (count:1){
                         self.userData.charts[self.chartIndex].lines[self.lineInex(line: line)].isHidden.toggle()
-                    })
+                    }
             }
         }
         .frame(width: width, height: height,  alignment: .topLeading)

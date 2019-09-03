@@ -15,23 +15,61 @@ extension Array {
 }
 
 struct Card: View {
-    @Environment(\.colorScheme) var colorSchema: ColorScheme
     @EnvironmentObject var userData: UserData
+    @Environment(\.colorScheme) var colorSchema: ColorScheme
     
-    var indexChart: Int
+    var chart: LinesSet
+    
+    var index: Int {
+        userData.charts.firstIndex(where: { $0.id == chart.id })!
+    }
+    
+    var indent: CGFloat = 0
+    var colorXAxis: Color = Color.secondary
+    var colorXMark: Color = Color.primary
+    
+    private var indicatorColor: Color {
+        colorSchema == ColorScheme.light ?
+            Color.blue : Color.yellow
+    }
     
     private var cardBackgroundColor: Color {
         colorSchema == ColorScheme.light ?
             Color(white: 0.97) : Color.black
     }
     
+    func rangeTimeFor(indexChat: Int) -> Range<Int> {
+        let numberPoints = userData.charts[indexChat].xTime.count
+        let rangeTime: Range<Int>  = 0..<(numberPoints - 1)
+        return rangeTime
+    }
+    
     var body: some View {
-        ZStack {
-            self.cardBackgroundColor
-            ChartView(chart: self.userData.charts[self.indexChart])
-               .padding(.top)
-        }
-         .border(Color.secondary, width: 3, cornerRadius: 25)// VStack
+       ZStack{
+      self.cardBackgroundColor
+       GeometryReader { geometry in
+       
+              VStack  (alignment: .leading, spacing: 10) {
+                  Text("   CHART \(self.index + 1):  \(self.chart.xTime.first!) - \(self.chart.xTime.last!)  \(self.chart.lines.count)  lines")
+                    .font(.subheadline)
+                  .foregroundColor(Color("ColorTitle"))
+                  Text(" ").font(.footnote)
+                  ZStack{
+                      YTickerView(chart: self.userData.charts[self.index], indent: 0, colorYAxis: Color("ColorTitle"), colorYMark: Color.primary)
+                      
+                      GraphsForChart(chart: self.userData.charts[self.index], rangeTime: self.rangeTimeFor (indexChat: self.index), lineWidth : 1)
+                      .padding(self.indent)
+                   
+                      IndicatorView (color: self.indicatorColor, chart: self.chart, rangeTime: self.rangeTimeFor (indexChat: self.index))
+                              .padding(self.indent)
+                  }
+                  .frame(height: geometry.size.height  * 0.78)
+                  
+                  TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark, height: geometry.size.height  * 0.06 ,indent: self.indent)
+              } // VStack
+              } // Geometry
+          } //Zstack
+        .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2).foregroundColor(Color.secondary))
     }
 }
 
@@ -44,11 +82,12 @@ struct ListCardsView : View {
         NavigationView {
             List (0..<userData.charts.count, id:\.self){ indexChat in
                 NavigationLink(destination:
-                    ChartView(chart: self.userData.charts[indexChat])
+                   ChartView(chart: self.userData.charts[indexChat])
                         .environmentObject(UserData())
                         .frame(height: 680))  {
                             ChartView(chart: self.userData.charts[indexChat])
-                                .environmentObject(UserData())
+                           // Card(chart: self.userData.charts[indexChat])
+                            .environmentObject(UserData())
                                 .frame(height: 680)
                 }
             }// List
@@ -84,6 +123,7 @@ struct HStackCardsView : View {
 
 // Need separate file
 struct OverlayStackView : View {
+    @EnvironmentObject var userData: UserData
     @State var indeces = [0,1,2,3,4]
   
     func indexOfIndeces(forElement: Int) -> Int {
@@ -94,28 +134,29 @@ struct OverlayStackView : View {
         NavigationView {
             VStack{
                 ZStack{
-                    ForEach(indeces.reversed()){ indexChat in
-                        Card(indexChart: indexChat)
+                    ForEach(indeces.reversed(), id: \.self){ indexChat in
+                        Card(chart: self.userData.charts[indexChat])
+                          //  .environmentObject(UserData())
                             .frame(height: 600)
                             .offset(y: CGFloat(33 * (self.indeces.count -  self.indexOfIndeces(forElement: indexChat) - 1)))
                             .animation(.easeInOut(duration: 0.6))
-                            .tapAction {
+                            .onTapGesture(count: 1)  {
                                 self.indeces.rearrange(from: self.indexOfIndeces(forElement: indexChat), to: 4)
                         }
                     }// ForEach
                 } // ZStack
                 Spacer()
                 } // VStack
-                .navigationBarTitle(Text("Followers"), displayMode: .inline)
+                .navigationBarTitle(Text("Followers"))
         }
     }
 }
 struct ContentView : View {
     @EnvironmentObject var userData: UserData
     var body: some View {
-        // ListCardsView ()
-         HStackCardsView ()
-        // OverlayStackView ()
+        ListCardsView ()
+      //   HStackCardsView ()
+      //   OverlayStackView ()
     }
 }
 

@@ -21,7 +21,7 @@ struct GraphsForChart : View {
     
     var chart: LinesSet
     var rangeTime: Range<Int>
-    var lineWidth: Length = 1
+    var lineWidth: CGFloat = 1
     
     private var chartIndex: Int {userData.chartIndex(chart: chart)}
     var rangeY : Range<Int> {
@@ -32,9 +32,10 @@ struct GraphsForChart : View {
     var body: some View {
        ZStack{
         ForEach(userData.charts[chartIndex].lines.filter{!$0.isHidden}) { line in
-                    GraphView(rangeTime: self.rangeTime, line:  line, rangeY: self.rangeY, lineWidth: self.lineWidth)
+                    GraphViewNew(rangeTime: self.rangeTime, line:  line, rangeY: self.rangeY, lineWidth: self.lineWidth)
                        .transition(.move(edge: .top))
             }
+           .drawingGroup()
         }
     }
 }

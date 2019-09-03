@@ -24,7 +24,7 @@ struct YTickerView : View {
     @EnvironmentObject var userData: UserData
     
     var chart: LinesSet
-    var indent: Length
+    var indent: CGFloat
     var colorYAxis: Color
     var colorYMark: Color
     

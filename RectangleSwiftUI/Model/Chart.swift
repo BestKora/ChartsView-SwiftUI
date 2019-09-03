@@ -59,6 +59,7 @@ struct LinesSet:Equatable,
     var lines = [Line] ()
     var lowerBound: CGFloat = 0.3
     var upperBound: CGFloat = 0.8
+    @UnitRange (initialValue:0.3...0.8, 0.05) var range: ClosedRange <CGFloat> 
 }
 
 struct Line: Equatable, Identifiable  {

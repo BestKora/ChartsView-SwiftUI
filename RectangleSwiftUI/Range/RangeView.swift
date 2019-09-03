@@ -16,7 +16,7 @@ struct RangeView : View {
     var chart: LinesSet
     var height: CGFloat
     var widthRange :CGFloat
-    var indent: Length
+    var indent: CGFloat
     
     private var widthRectangle1: CGFloat { widthRange * userData.charts[self.chartIndex].lowerBound}
     private var widthImage: CGFloat { widthRange * (userData.charts[self.chartIndex].upperBound - userData.charts[self.chartIndex].lowerBound)}
@@ -42,8 +42,8 @@ struct RangeView : View {
                     }
             )
             Rectangle()
-                .foregroundColor(Color("ColorRangeViewTint"))
                 .frame(width: self.widthRectangle2, height: self.height, alignment: .leading)
+                .foregroundColor(Color("ColorRangeViewTint"))
                 .gesture(DragGesture(minimumDistance: 0)
                     .onChanged (onDragChangedRectangle2)
                     .onEnded { value in

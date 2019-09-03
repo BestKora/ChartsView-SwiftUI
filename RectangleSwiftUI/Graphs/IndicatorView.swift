@@ -123,9 +123,10 @@ struct IndicatorView : View {
 #if DEBUG
 struct IndicatorView_Previews : PreviewProvider {
     static var previews: some View {
+         NavigationView {
         IndicatorView(color: Color.secondary, chart: chartsData[0],  rangeTime: 0..<chartsData[0].lines[0].points.count)
-            .colorScheme(.light)
         .environmentObject(UserData())
+        }  .colorScheme(.dark)
     }
 }
 #endif

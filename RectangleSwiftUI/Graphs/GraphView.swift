@@ -19,7 +19,7 @@ struct GraphView : View {
     var rangeTime: Range<Int>
     var line: Line
     var rangeY: Range<Int>?
-    var lineWidth: Length = 1
+    var lineWidth: CGFloat = 1
    
     private var colorGraph: Color  { Color(uiColor: line.color!) }
     private var minY: Int {rangeY == nil ? line.points[rangeTime].min()! : rangeY!.lowerBound}
@@ -40,7 +40,7 @@ struct GraphView : View {
                              )
             } // Path
                 .stroke(self.colorGraph, lineWidth: self.lineWidth)
-                .animation(.easeInOut(duration: 0.6))
+                .animation(.linear(duration: 0.6))
         } // Geometry
     }  // body
 }

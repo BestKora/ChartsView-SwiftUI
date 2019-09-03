@@ -18,7 +18,7 @@ struct ChartView : View {
         userData.charts.firstIndex(where: { $0.id == chart.id })!
     }
     
-    var indent: Length = 0
+    var indent: CGFloat = 0
     var colorXAxis: Color = Color.secondary
     var colorXMark: Color = Color.primary
     
@@ -34,7 +34,6 @@ struct ChartView : View {
     }
     
     var body: some View {
-//      NavigationView {
        GeometryReader { geometry in
         VStack  (alignment: .leading, spacing: 10) {
             Text("   CHART \(self.index + 1):  \(self.chart.xTime.first!) - \(self.chart.xTime.last!)  \(self.chart.lines.count)  lines")
@@ -52,7 +51,7 @@ struct ChartView : View {
             }
             .frame(height: geometry.size.height  * 0.63)
             
-            TickerView(chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark, height: geometry.size.height  * 0.058 ,indent: self.indent)
+            TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark, height: geometry.size.height  * 0.058 ,indent: self.indent)
             
             RangeView(chart: self.userData.charts[self.index], height: geometry.size.height  * 0.1, widthRange: geometry.size.width, indent: self.indent)
                 .environmentObject(self.userData)
@@ -62,10 +61,6 @@ struct ChartView : View {
             Text(" ").font(.footnote)
         } // VStack
         } // Geometry
- /*
-       .navigationBarTitle(Text("Followers"))
-        } //NavigationView
-*/
     }
 }
 //}
@@ -73,11 +68,13 @@ struct ChartView : View {
 #if DEBUG
 struct ChartView_Previews : PreviewProvider {
     static var previews: some View {
+        NavigationView {
         ChartView(chart: chartsData[0])
-             .colorScheme(.light)
-             .frame(height: 780)
-             .environmentObject(UserData())
-       
+              .frame(height: 740)
+              .environmentObject(UserData())
+              .navigationBarTitle(Text("Followers"))
+        }
+        .colorScheme(.dark)
     }
 }
 #endif

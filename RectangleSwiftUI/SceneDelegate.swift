@@ -22,7 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView:  ContentView().environmentObject(UserData()))
+            window.rootViewController = UIHostingController(rootView: /*  RangeViewNew(bounds: Bounds(), widthRange: UIScreen.main.bounds.width, height: 100, chart: chartsData[0])
+              .environmentObject(UserData())*/
+               ContentView().environmentObject(UserData()))
             self.window = window
             window.makeKeyAndVisible()
         }
