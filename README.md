@@ -2,7 +2,7 @@
 
 For this app Xcode 11 Beta 7 and MacOS Catalina Beta 7 are required.
  
-![ChartView](https://bestkora.com/IosDeveloper/wp-content/uploads/2019/07/Screenshot-2019-07-15-at-11.54.23-1.png)
+![ChartView](ChartView.png)
 
 ## which consists of:
 
