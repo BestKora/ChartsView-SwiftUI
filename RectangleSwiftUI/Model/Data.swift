@@ -219,5 +219,3 @@ extension UIColor {
     }
 }
 
-/*let columns: ChartElement = load("overview.json")
- let chartsData : [LinesSet]  =  addID( charts: [columns].compactMap { convertToInternalModel($0)})*/

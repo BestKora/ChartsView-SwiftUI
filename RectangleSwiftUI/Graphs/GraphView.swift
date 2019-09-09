@@ -34,8 +34,9 @@ struct GraphView : View {
                 let step = (width - origin.x) / CGFloat(self.rangeTime.distance - 1)
                 
                path.addLines(Array(self.rangeTime.lowerBound..<self.rangeTime.upperBound)
-                            .map{ CGPoint(x: origin.x + CGFloat($0 - self.rangeTime.lowerBound) * step,
-                                          y: origin.y - CGFloat(self.line.points[$0]  - self.minY)  * scale)
+                            .map{
+                                CGPoint(x: origin.x + CGFloat($0 - self.rangeTime.lowerBound) * step,
+                                        y: origin.y - CGFloat(self.line.points[$0]  - self.minY)  * scale)
                                 }
                              )
             } // Path
@@ -49,9 +50,9 @@ struct GraphView : View {
 struct GraphView_Previews : PreviewProvider {
     
     static var previews: some View {
-        GraphView( rangeTime: 0..<(chartsData[0].lines[0].points.count - 1),
-                   line: chartsData[0].lines[0],
-                   lineWidth: 2)
+        GraphView(rangeTime: 0..<(chartsData[0].lines[0].points.count - 1),
+                  line: chartsData[0].lines[0],
+                  lineWidth: 2)
             .frame( height: 400 )
     }
 }

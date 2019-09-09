@@ -45,7 +45,7 @@ struct RangeViewNew : View {
                 let upper = /* self.bounds*/self.userData.charts[0].range.upperBound
                 var lower = /*self.bounds*/self.userData.charts[0].range.lowerBound
              
-                    lower =  lower + (translationX  -  self.prevTranslation) / self.widthRange
+                lower =  lower + (translationX  -  self.prevTranslation) / self.widthRange
                     self.prevTranslation = translationX
                     if !(((upper - lower) < self.defaultMinimumRangeDistance) && translationX > 0){
                         /*self.bounds*/self.userData.charts[0].range  =  lower...upper

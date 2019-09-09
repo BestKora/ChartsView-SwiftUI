@@ -56,7 +56,7 @@ struct ChartView : View {
             RangeView(chart: self.userData.charts[self.index], height: geometry.size.height  * 0.1, widthRange: geometry.size.width, indent: self.indent)
                 .environmentObject(self.userData)
  
-            CheckMarksView(chart: self.userData.charts[self.index], height: geometry.size.height  * 0.05, width: geometry.size.width)
+            CheckMarksNewView(chart: self.userData.charts[self.index], height: geometry.size.height  * 0.05, width: geometry.size.width)
                 .offset(y: 10)
             Text(" ").font(.footnote)
         } // VStack

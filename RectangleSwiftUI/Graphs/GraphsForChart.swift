@@ -17,35 +17,36 @@ func rangeOfRanges<C: Collection>(_ ranges: C) -> Range<Int>
 }
 
 struct GraphsForChart : View {
-    @EnvironmentObject  var userData: UserData
     
     var chart: LinesSet
     var rangeTime: Range<Int>
-    var lineWidth: CGFloat = 1
+    var lineWidth: CGFloat = 2
     
-    private var chartIndex: Int {userData.chartIndex(chart: chart)}
-    var rangeY : Range<Int> {
-        let rangeY = rangeOfRanges(userData.charts[chartIndex].lines.filter{!$0.isHidden}.map {$0.points[rangeTime].min()!..<$0.points[rangeTime].max()!})
+  private var rangeY : Range<Int> {
+        let rangeY = rangeOfRanges(chart.lines.filter{!$0.isHidden}.map {$0.points[rangeTime].min()!..<$0.points[rangeTime].max()!})
          return rangeY == 0..<0 ? 0..<1 : rangeY
     }
 
     var body: some View {
        ZStack{
-        ForEach(userData.charts[chartIndex].lines.filter{!$0.isHidden}) { line in
-                    GraphViewNew(rangeTime: self.rangeTime, line:  line, rangeY: self.rangeY, lineWidth: self.lineWidth)
+        ForEach( chart.lines.filter{!$0.isHidden}) { line in
+                    GraphViewNew(rangeTime: self.rangeTime,
+                                 line:  line,
+                                 rangeY: self.rangeY,
+                                 lineWidth: self.lineWidth)
                        .transition(.move(edge: .top))
             }
-           .drawingGroup()
-        }
+        } // ZStack
+         .drawingGroup()
     }
 }
 
 #if DEBUG
 struct GraphsForChart_Previews : PreviewProvider {
     static var previews: some View {
-        GraphsForChart(chart: chartsData[4], rangeTime: 0..<(chartsData[4].lines[0].points.count - 1), lineWidth : 2)
+        GraphsForChart(chart: chartsData[4], rangeTime: 0..<(chartsData[4].xTime.count - 1), lineWidth : 2)
          .frame( height: 400 )
-         .environmentObject(UserData())
     }
 }
 #endif
+

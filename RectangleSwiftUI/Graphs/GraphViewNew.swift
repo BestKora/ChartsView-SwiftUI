@@ -54,23 +54,6 @@ struct GraphViewNew: View {
         .stroke(self.colorGraph, lineWidth: self.lineWidth)
         .animation(.linear(duration: 0.6))
      
-        /*   GeometryReader { geometry in
-               Path { path in
-                   let width: CGFloat = geometry.size.width
-                   let scale = geometry.size.height / (CGFloat(self.maxY - self.minY) )
-                   let origin = CGPoint(x: 0, y: geometry.size.height )
-                   let step = (width - origin.x) / CGFloat(self.rangeTime.distance - 1)
-                   
-                  path.addLines(Array(self.rangeTime.lowerBound..<self.rangeTime.upperBound)
-                               .map{ CGPoint(x: origin.x + CGFloat($0 - self.rangeTime.lowerBound) * step,
-                                             y: origin.y - CGFloat(self.line.points[$0]  - self.minY)  * scale)
-                                   }
-                                )
-               } // Path
-                   .stroke(self.colorGraph, lineWidth: self.lineWidth)
-                   .animation(.linear(duration: 0.6))
-           } // Geometry
- */
        }  // body
    }
 

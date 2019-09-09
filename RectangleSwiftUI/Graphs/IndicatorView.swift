@@ -124,8 +124,11 @@ struct IndicatorView : View {
 struct IndicatorView_Previews : PreviewProvider {
     static var previews: some View {
          NavigationView {
-        IndicatorView(color: Color.secondary, chart: chartsData[0],  rangeTime: 0..<chartsData[0].lines[0].points.count)
+            ZStack {
+                GraphsForChart(chart: chartsData[0], rangeTime: 0..<12/*(chartsData[0].xTime.count - 1)*/, lineWidth : 2)
+        IndicatorView(color: Color.secondary, chart: chartsData[0],  rangeTime: 0..<12/*(chartsData[0].lines[0].points.count -1)*/)
         .environmentObject(UserData())
+            }
         }  .colorScheme(.dark)
     }
 }
