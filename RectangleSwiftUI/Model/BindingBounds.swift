@@ -39,16 +39,13 @@ struct UnitRange <Value: FloatingPoint>: Equatable {
                 let lower =  min(max(newLower, 0), newUpper - defaultMinimumRangeDistance)
                 let upper =  max(min( newUpper , 1), newLower + defaultMinimumRangeDistance)
                 let rangeNew = lower...upper
-                print ("rangeNew = \(rangeNew)")
                 return range = /*lower...upper */rangeNew
  
               } else if (newLower + defaultMinimumRangeDistance) < 1 {
                  let rangeNew = newLower...(newLower + defaultMinimumRangeDistance)
-                 print ("rangeNew = \(rangeNew)")
                 return range = rangeNew/*newLower...(newLower + defaultMinimumRangeDistance)*/
             } else {
                  let rangeNew = (newUpper - defaultMinimumRangeDistance)...newUpper
-                 print ("rangeNew = \(rangeNew)")
                 return range = rangeNew /*(newUpper - defaultMinimumRangeDistance)...newUpper*/
             }
         }

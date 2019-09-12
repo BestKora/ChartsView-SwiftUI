@@ -9,28 +9,25 @@
 import SwiftUI
 
 struct TickerView : View {
-    @EnvironmentObject var userData: UserData
     
     var rangeTime: Range<Int>
     var chart: LinesSet
     var colorXAxis: Color
     var colorXMark: Color
-    
-    var height: CGFloat
     var indent: CGFloat
     var estimatedMarksNumber = 6
     
     private var widthRange: CGFloat {UIScreen.main.bounds.width}
     private var numberPoints: Int {chart.xTime.count }
-    private var rangeTimeWhole: Range<Int>  {0..<userData.charts[chartIndex].xTime.count}
-    private var chartIndex: Int {userData.chartIndex(chart: chart)}
+    private var rangeTimeWhole: Range<Int>  {0..<chart.xTime.count}
     
     var body: some View {
        let (scaleTime, step, indexes) = calcScale()
        return
-        ScrollView(.horizontal, showsIndicators: false ){
+        GeometryReader { geometry in
+           ScrollView(.horizontal, showsIndicators: false ){
             HStack (spacing: 0) {
-                ForEach(indexes, id: \.self) { indexMark in
+            ForEach(indexes, id: \.self) { indexMark in
                     TimeMarkView(index: indexMark, xTime: self.chart.xTime, colorXAxis: self.colorXAxis, colorXMark: self.colorXMark)
                     } // ForEach
                 .frame(width: step, height: 30)
@@ -38,10 +35,10 @@ struct TickerView : View {
                 } // HStack
              .overlay(XAxisView(color: self.colorXAxis))
         } // ScrollView
-         .frame(height: self.height)
+         .frame(height: geometry.size.height)
          .background(Color("ColorTickerX"))
-         //  .transition(.moveAndFadeMarks)
-    }
+        } // Geometry
+    } //body
     
     private func calcScale() -> (scaleTime :CGFloat,step: CGFloat, indexes: [Int]  ){
             let estimatedStepMark: CGFloat  = widthRange / CGFloat((1..<estimatedMarksNumber).distance)
@@ -57,8 +54,8 @@ struct TickerView : View {
 #if DEBUG
 struct TickerView_Previews : PreviewProvider {
     static var previews: some View {
-        TickerView(rangeTime: 0..<(chartsData[4].lines[0].points.count - 1),chart: chartsData[4], colorXAxis: Color.blue, colorXMark: Color.black, height: 40, indent: 10)
-            .environmentObject(UserData())
+        TickerView(rangeTime: 0..<(chartsData[4].lines[0].points.count - 1),chart: chartsData[4], colorXAxis: Color.blue, colorXMark: Color.black, indent: 10)
+            .frame(height: 40)
     }
 }
 #endif

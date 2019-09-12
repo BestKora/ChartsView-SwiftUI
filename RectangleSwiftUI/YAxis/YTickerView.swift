@@ -15,7 +15,6 @@ extension AnyTransition {
         
         let removal = AnyTransition.move(edge: .bottom)
             .combined(with: .opacity)
-        
         return .asymmetric(insertion: insertion, removal: removal)
     }
 }
@@ -31,11 +30,11 @@ struct YTickerView : View {
     var estimatedMarksNumber = 6
     
     private var numberPoints: Int {chart.lines[0].points.count }
-    private var rangeTime: Range<Int> {Int(userData.charts[chartIndex].lowerBound * CGFloat(numberPoints - 1))..<Int(userData.charts[chartIndex].upperBound * CGFloat(numberPoints - 1)) }
-    private var chartIndex: Int {userData.chartIndex(chart: chart)}
+    private var rangeTime: Range<Int> {Int(/*userData.charts[chartIndex]*/chart.lowerBound * CGFloat(numberPoints - 1))..<Int(/*userData.charts[chartIndex]*/chart.upperBound * CGFloat(numberPoints - 1)) }
+//    private var chartIndex: Int {userData.chartIndex(chart: chart)}
     
     var rangeY : Range<Int>? {
-        let rangeY = rangeOfRanges(userData.charts[chartIndex].lines.filter{!$0.isHidden}.map {$0.points[rangeTime].min()!..<$0.points[rangeTime].max()!})
+        let rangeY = rangeOfRanges(/*userData.charts[chartIndex]*/chart.lines.filter{!$0.isHidden}.map {$0.points[rangeTime].min()!..<$0.points[rangeTime].max()!})
         return rangeY == 0..<0 ? 0..<1 : rangeY
     }
     

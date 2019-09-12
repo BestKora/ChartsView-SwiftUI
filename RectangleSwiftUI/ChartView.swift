@@ -46,12 +46,13 @@ struct ChartView : View {
                 GraphsForChart(chart: self.userData.charts[self.index], rangeTime: self.rangeTimeFor (indexChat: self.index), lineWidth : 2)
                 .padding(self.indent)
              
-                IndicatorView (color: self.indicatorColor, chart: self.chart, rangeTime: self.rangeTimeFor (indexChat: self.index))
+                IndicatorView (color: self.indicatorColor, chart: self.userData.charts[self.index], rangeTime: self.rangeTimeFor (indexChat: self.index))
                         .padding(self.indent)
             }
             .frame(height: geometry.size.height  * 0.63)
             
-            TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark, height: geometry.size.height  * 0.058 ,indent: self.indent)
+            TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark,/* height: geometry.size.height  * 0.058,*/ indent: self.indent)
+            .frame(height: geometry.size.height  * 0.058)
             
             RangeView(chart: self.userData.charts[self.index], height: geometry.size.height  * 0.1, widthRange: geometry.size.width, indent: self.indent)
                 .environmentObject(self.userData)

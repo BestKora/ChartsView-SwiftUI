@@ -64,12 +64,13 @@ struct Card: View, Identifiable {
                       GraphsForChart(chart: self.userData.charts[self.index], rangeTime: self.rangeTimeFor (indexChat: self.index), lineWidth : 2)
                       .padding(self.indent)
                    
-                      IndicatorView (color: self.indicatorColor, chart: self.chart, rangeTime: self.rangeTimeFor (indexChat: self.index))
+                      IndicatorView (color: self.indicatorColor, chart: self.userData.charts[self.index], rangeTime: self.rangeTimeFor (indexChat: self.index))
                               .padding(self.indent)
                   }
                   .frame(height: geometry.size.height  * 0.78)
               
-                  TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark, height: geometry.size.height  * 0.06 ,indent: self.indent)
+                  TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark, /*height: geometry.size.height  * 0.06,*/indent: self.indent)
+                .frame(height: geometry.size.height  * 0.06)
               } // VStack
               } // Geometry
           } //Zstack
@@ -149,9 +150,10 @@ struct OverlayStackView : View {
     }
     
     var body: some View {
+  
             VStack{
                 ZStack{
-                   ForEach(indeces.reversed(), id: \.self){ indexChat in
+                    ForEach(self.indeces.reversed(), id: \.self){ indexChat in
                  Group {
                     if self.indexOfIndeces(forElement: indexChat) == 0 {
                  //   if self.indeces.firstIndex(of: indexChat) == 0 {
@@ -169,7 +171,6 @@ struct OverlayStackView : View {
                                     .onEnded { value in
                                         if self.viewState.height > 300 {
                                              self.indeces.rearrange(from: self.indexOfIndeces(forElement: indexChat), to: (self.indeces.count - 1))
-                                              print ("\(self.indeces) indexChat = \(indexChat)")
                                              self.viewState = CGSize.zero
                                         } else {
                                             self.viewState = CGSize.zero
@@ -183,14 +184,15 @@ struct OverlayStackView : View {
                             
                         .sheet(item: self.$presentedCard, onDismiss: {
                             self.presentedCard = nil
-                        }, content: { movie in
+                        }, content: { card in
                             NavigationView {
-                               ChartView(chart: self.userData.charts[indexChat])
-                                .frame(height: 800)
-                                .cornerRadius(20)
+                               ChartView(chart: card)
+                                .frame(height: 760)
+                                .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 2).foregroundColor(Color.primary))
                             }
                             .navigationViewStyle(StackNavigationViewStyle())
                             .environmentObject(UserData())
+                            .colorScheme(self.colorSchema)
                         })
                     
                     } else {
@@ -207,7 +209,9 @@ struct OverlayStackView : View {
 
                  Spacer()
                 } // VStack
-    }
+     
+      
+    } // body
     private func scaleResistance() -> Double {
         Double(UIScreen.main.bounds.width) / 6800
        }
@@ -216,18 +220,19 @@ struct ContentView : View {
     @EnvironmentObject var userData: UserData
     var body: some View {
        // ListCardsView ()
-         HStackCardsView ()
-      //   OverlayStackView ()
+        HStackCardsView ()
+       //  OverlayStackView ()
     }
 }
 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
+        
         ContentView()
          //   .padding()
-            .colorScheme(.dark)
             .environmentObject(UserData())
+            .colorScheme(.dark)
     }
 }
 #endif

@@ -9,9 +9,7 @@
 import SwiftUI
 
 struct IndicatorView : View {
-    @EnvironmentObject var userData: UserData
     @Environment(\.colorScheme) var colorSchema: ColorScheme
-    
     @State private var positionIndicator: CGFloat = 0.3
     @State private var prevTranslation: CGFloat = 0
     
@@ -19,7 +17,6 @@ struct IndicatorView : View {
     var chart: LinesSet
     var rangeTime: Range<Int>
     
-    private var chartIndex: Int {userData.chartIndex(chart: chart)}
     private var indexIndicator:Int { return rangeTime.lowerBound + Int(CGFloat(rangeTime.distance - 1) * positionIndicator)}
     
     private var zViewTintColor: Color {
@@ -28,14 +25,13 @@ struct IndicatorView : View {
             Color(red: 209/255.0, green: 209/255.0, blue: 204/255.0, opacity: 0.4)
     }
  
-    var rangeY : Range<Int>? {
-        let rangeY = rangeOfRanges(userData.charts[chartIndex].lines.filter{!$0.isHidden}.map {$0.points[rangeTime].min()!..<$0.points[rangeTime].max()!})
+    private var rangeY : Range<Int>? {
+        let rangeY = rangeOfRanges(chart.lines.filter{!$0.isHidden}.map {$0.points[rangeTime].min()!..<$0.points[rangeTime].max()!})
          return rangeY == 0..<0 ? 0..<1 : rangeY
     }
     
-  //  private var numberPoints: Int {chart.xTime.count }
     
-    private var notHiddenLines: [Line]  {userData.charts[chartIndex].lines.filter {!$0.isHidden }}
+    private var notHiddenLines: [Line]  {chart.lines.filter {!$0.isHidden }}
     
     var body: some View {
         GeometryReader { geometry in
@@ -90,9 +86,7 @@ struct IndicatorView : View {
                         self.positionIndicator = min(max(newPosition,0),1)
                         self.prevTranslation = value.translation.width
                 }
-                .onEnded { value in
-                    let newPosition = self.positionIndicator + (value.translation.width - self.prevTranslation) / geometry.size.width
-                    self.positionIndicator = min(max(newPosition,0),1)
+                    .onEnded { value in
                     self.prevTranslation = 0.0
                     }
             )
@@ -125,11 +119,12 @@ struct IndicatorView_Previews : PreviewProvider {
     static var previews: some View {
          NavigationView {
             ZStack {
-                GraphsForChart(chart: chartsData[0], rangeTime: 0..<12/*(chartsData[0].xTime.count - 1)*/, lineWidth : 2)
-        IndicatorView(color: Color.secondary, chart: chartsData[0],  rangeTime: 0..<12/*(chartsData[0].lines[0].points.count -1)*/)
-        .environmentObject(UserData())
+                GraphsForChart(chart: chartsData[0], rangeTime: 18..<40/*(chartsData[0].xTime.count - 1)*/, lineWidth : 2)
+                IndicatorView(color: Color.secondary, chart: chartsData[0],  rangeTime: 18..<40/*(chartsData[0].lines[0].points.count -1)*/)
             }
-        }  .colorScheme(.dark)
+        }
+      //  .environmentObject(UserData())
+         .colorScheme(.dark)
     }
 }
 #endif

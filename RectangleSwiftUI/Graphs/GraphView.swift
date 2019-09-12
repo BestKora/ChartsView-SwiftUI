@@ -15,7 +15,6 @@ extension Range where Bound: Numeric {
 }
 
 struct GraphView : View {
-    
     var rangeTime: Range<Int>
     var line: Line
     var rangeY: Range<Int>?
@@ -34,9 +33,8 @@ struct GraphView : View {
                 let step = (width - origin.x) / CGFloat(self.rangeTime.distance - 1)
                 
                path.addLines(Array(self.rangeTime.lowerBound..<self.rangeTime.upperBound)
-                            .map{
-                                CGPoint(x: origin.x + CGFloat($0 - self.rangeTime.lowerBound) * step,
-                                        y: origin.y - CGFloat(self.line.points[$0]  - self.minY)  * scale)
+                            .map{ CGPoint(x: origin.x + CGFloat($0 - self.rangeTime.lowerBound) * step,
+                                         y: origin.y - CGFloat(self.line.points[$0]  - self.minY)  * scale)
                                 }
                              )
             } // Path

@@ -27,8 +27,7 @@ struct TimeMarkView : View {
                 .foregroundColor(self.colorXMark)
                 .offset(x: (-(geometry.size.width / 2)))
            } // VStack
-           // .animation(.linear(duration: 0.6))
-          } // geometry
+          } // Geometry
     }
 }
 

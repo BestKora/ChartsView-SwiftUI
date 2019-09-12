@@ -21,11 +21,12 @@ struct YMarkView : View {
                         path.addLine(to: CGPoint(x:geometry.size.width, y: 0))
                      }
                     .stroke(Color.secondary,lineWidth: 1)
-               Text(verbatim:self.yValue.formatnumber().trimmingCharacters(in: .whitespacesAndNewlines))
+               Text(self.yValue.formatnumber().trimmingCharacters(in: .whitespacesAndNewlines))
                    .font(.body)
                    .foregroundColor(self.colorYMark)
                    .offset(x: (-(geometry.size.width / 2) + 30), y: -(geometry.size.height))
                 }//VStack
+                 .animation(.easeInOut(duration: 0.6))
             } // Geometry
     }
 }
@@ -34,7 +35,7 @@ struct YMarkView : View {
 struct YMarkView_Previews : PreviewProvider {
     static var previews: some View {
         YMarkView(yValue: 188, colorYAxis: Color.blue, colorYMark: Color.red)
-            .frame(height: 60, alignment: .leading)
+            .frame(height: 100, alignment: .leading)
     }
 }
 #endif
