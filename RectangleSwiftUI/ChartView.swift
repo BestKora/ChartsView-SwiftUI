@@ -13,14 +13,13 @@ struct ChartView : View {
     @Environment(\.colorScheme) var colorSchema: ColorScheme
     
     var chart: LinesSet
-    
-    var index: Int {
-        userData.charts.firstIndex(where: { $0.id == chart.id })!
-    }
-    
-    var indent: CGFloat = 0
     var colorXAxis: Color = Color.secondary
     var colorXMark: Color = Color.primary
+    var indent: CGFloat = 0
+    
+    var index: Int {
+           userData.charts.firstIndex(where: { $0.id == chart.id })!
+       }
     
     private var indicatorColor: Color {
         colorSchema == ColorScheme.light ?
@@ -41,24 +40,23 @@ struct ChartView : View {
             .foregroundColor(Color("ColorTitle"))
             Text(" ").font(.footnote)
             ZStack{
-                YTickerView(chart: self.userData.charts[self.index], indent: 0, colorYAxis: Color("ColorTitle"), colorYMark: Color.primary)
+                YTickerView(chart: self.userData.charts[self.index], colorYAxis: Color("ColorTitle"), colorYMark: Color.primary)
                 
                 GraphsForChart(chart: self.userData.charts[self.index], rangeTime: self.rangeTimeFor (indexChat: self.index), lineWidth : 2)
-                .padding(self.indent)
              
                 IndicatorView (color: self.indicatorColor, chart: self.userData.charts[self.index], rangeTime: self.rangeTimeFor (indexChat: self.index))
-                        .padding(self.indent)
             }
+            .padding(self.indent)
             .frame(height: geometry.size.height  * 0.63)
             
-            TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark,/* height: geometry.size.height  * 0.058,*/ indent: self.indent)
+            TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark, indent: self.indent)
             .frame(height: geometry.size.height  * 0.058)
             
             RangeView(chart: self.userData.charts[self.index], height: geometry.size.height  * 0.1, widthRange: geometry.size.width, indent: self.indent)
                 .environmentObject(self.userData)
  
-            CheckMarksNewView(chart: self.userData.charts[self.index], height: geometry.size.height  * 0.05, width: geometry.size.width)
-                .offset(y: 10)
+            CheckMarksView(chart: self.userData.charts[self.index])
+            .frame(height: geometry.size.height  * 0.05)/*height: geometry.size.height  * 0.05, width: geometry.size.width)*/
             Text(" ").font(.footnote)
         } // VStack
         } // Geometry

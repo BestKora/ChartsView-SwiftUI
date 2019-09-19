@@ -18,6 +18,8 @@ struct RangeView : View {
     var widthRange :CGFloat
     var indent: CGFloat
     
+    private var chartIndex: Int {userData.chartIndex(chart: chart)}
+    
     private var widthRectangle1: CGFloat { widthRange * userData.charts[self.chartIndex].lowerBound}
     private var widthImage: CGFloat { widthRange * (userData.charts[self.chartIndex].upperBound - userData.charts[self.chartIndex].lowerBound)}
     private var widthRectangle2: CGFloat { widthRange * (1 - userData.charts[self.chartIndex].upperBound)}
@@ -57,10 +59,8 @@ struct RangeView : View {
             )
     } //body
     
-    private let defaultMinimumRangeDistance: CGFloat = 0.05
-       
-    private var chartIndex: Int {userData.chartIndex(chart: chart)}
     private var rightBorder: CGFloat  {(userData.charts[self.chartIndex].upperBound - userData.charts[self.chartIndex].lowerBound)  * widthRange}
+    private let defaultMinimumRangeDistance: CGFloat = 0.05
     private var numberLines: Int { chart.lines.count}
     private var numberPoints: Int {chart.xTime.count }
     private var selectionImage: String {colorSchema == ColorScheme.light ? "selection_frame_light" : "selection_frame_dark" }
@@ -115,7 +115,10 @@ struct RangeView : View {
 #if DEBUG
 struct RangeView_Previews : PreviewProvider {
     static var previews: some View {
-        RangeView(chart: chartsData[0], height: 100, widthRange:  UIScreen.main.bounds.width, indent: 10)
+        RangeView(chart: chartsData[0],
+                  height: 100,
+                  widthRange:  UIScreen.main.bounds.width,
+                  indent: 10)
            .environmentObject(UserData())
     }
 }

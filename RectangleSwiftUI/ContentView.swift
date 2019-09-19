@@ -59,7 +59,7 @@ struct Card: View, Identifiable {
                     .foregroundColor(Color("ColorTitle"))
                 Text(" ").font(.footnote)
                   ZStack{
-                      YTickerView(chart: self.userData.charts[self.index], indent: 0, colorYAxis: Color("ColorTitle"), colorYMark: Color.primary)
+                      YTickerView(chart: self.userData.charts[self.index], colorYAxis: Color("ColorTitle"), colorYMark: Color.primary)
                       
                       GraphsForChart(chart: self.userData.charts[self.index], rangeTime: self.rangeTimeFor (indexChat: self.index), lineWidth : 2)
                       .padding(self.indent)
@@ -79,30 +79,33 @@ struct Card: View, Identifiable {
         .padding()
     }
 }
-
+/*
 // Need separate file
 struct ListCardsView : View {
     // List
     @EnvironmentObject var userData: UserData
     
     var body: some View {
-        NavigationView {
-            List (0..<userData.charts.count, id:\.self){ indexChat in
+        GeometryReader{ geometry in
+            NavigationView {
+                List (0..<self.userData.charts.count, id:\.self){ indexChat in
                 NavigationLink(destination:
                    ChartView(chart: self.userData.charts[indexChat])
                         .environmentObject(UserData())
-                        .frame(height: 680))  {
+                        .frame(height: geometry.size.height))  {
+               
                             ChartView(chart: self.userData.charts[indexChat])
-                           // Card(chart: self.userData.charts[indexChat])
                             .environmentObject(UserData())
-                                .frame(height: 680)
-                }
+                                .frame(height: geometry.size.height)
+                          
+                } // NavigationLink
             }// List
                 .navigationBarTitle(Text("Followers"))
-        } // Navigation
+          } // Navigation
+        } //Geometry
     }
 }
-
+*/
 // Need separate file
 struct HStackCardsView : View {
     @EnvironmentObject var userData: UserData
@@ -206,9 +209,8 @@ struct OverlayStackView : View {
                     } // Group
                     }// ForEach
                 } // ZStack
-
-                 Spacer()
                 } // VStack
+                .edgesIgnoringSafeArea(.all)
      
       
     } // body
@@ -219,7 +221,7 @@ struct OverlayStackView : View {
 struct ContentView : View {
     @EnvironmentObject var userData: UserData
     var body: some View {
-       // ListCardsView ()
+       //  ListCardsView ()
         HStackCardsView ()
        //  OverlayStackView ()
     }

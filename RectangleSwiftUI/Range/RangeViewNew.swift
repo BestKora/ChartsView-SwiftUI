@@ -20,7 +20,7 @@ struct RangeViewNew : View {
     @ObservedObject var bounds: Bounds
     @EnvironmentObject var userData: UserData
     
-    var widthRange :CGFloat
+    var widthRange :CGFloat 
     var height: CGFloat
     var chart: LinesSet
     var index: Int {
@@ -39,6 +39,7 @@ struct RangeViewNew : View {
     var widthRectangle2: CGFloat { (1 - /*bounds*/userData.charts[0].range.upperBound) *  widthRange}
 
     var body: some View {
+      
         let gesture1 = DragGesture(minimumDistance: 0, coordinateSpace: .local)
             .onChanged { value in
                 let translationX = value.translation.width
@@ -80,10 +81,7 @@ struct RangeViewNew : View {
                     }
         }
         
-        return VStack{
-            //--------
-             GraphsForChart(chart: self.userData.charts[self.index], rangeTime: self.rangeTimeFor (indexChat: self.index), lineWidth : 2)
-            //--------
+        return
             HStack (spacing: 0){
             Rectangle()
                     .frame(width: widthRectangle1, height: self.height)
@@ -99,10 +97,6 @@ struct RangeViewNew : View {
                 .foregroundColor(Color.red)
                 .gesture(gesture2)
             }
-            Text("\(/*bounds*/userData.charts[0].range.upperBound)")
-            Text("\(/*bounds*/userData.charts[0].range.lowerBound )")
-           
-        }
     } //body
 }
 

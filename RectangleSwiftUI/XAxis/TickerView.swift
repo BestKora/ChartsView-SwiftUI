@@ -15,6 +15,7 @@ struct TickerView : View {
     var colorXAxis: Color
     var colorXMark: Color
     var indent: CGFloat
+    
     var estimatedMarksNumber = 6
     
     private var widthRange: CGFloat {UIScreen.main.bounds.width}
@@ -54,7 +55,11 @@ struct TickerView : View {
 #if DEBUG
 struct TickerView_Previews : PreviewProvider {
     static var previews: some View {
-        TickerView(rangeTime: 0..<(chartsData[4].lines[0].points.count - 1),chart: chartsData[4], colorXAxis: Color.blue, colorXMark: Color.black, indent: 10)
+        TickerView( rangeTime: 0..<(chartsData[4].lines[0].points.count - 1),
+                   chart: chartsData[4],
+                   colorXAxis: Color.blue,
+                   colorXMark: Color.black,
+                   indent: 10)
             .frame(height: 40)
     }
 }

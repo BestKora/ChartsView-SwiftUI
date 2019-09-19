@@ -123,7 +123,6 @@ struct IndicatorView_Previews : PreviewProvider {
                 IndicatorView(color: Color.secondary, chart: chartsData[0],  rangeTime: 18..<40/*(chartsData[0].lines[0].points.count -1)*/)
             }
         }
-      //  .environmentObject(UserData())
          .colorScheme(.dark)
     }
 }

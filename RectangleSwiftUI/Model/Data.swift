@@ -8,6 +8,7 @@ Helpers for loading images and data.
 import Foundation
 import UIKit
 import SwiftUI
+import Combine
 
 let columns: [ChartElement] = load("chart.json")
 let chartsData : [LinesSet]  =  addID( charts: columns.compactMap { convertToInternalModel($0)})
@@ -23,7 +24,7 @@ func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
     else {
         fatalError("Couldn't find \(filename) in main bundle.")
     }
-    
+   
     do {
         data = try Data(contentsOf: file)
     } catch {

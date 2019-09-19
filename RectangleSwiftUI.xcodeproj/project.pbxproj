@@ -15,12 +15,10 @@
 		E43507EA22B3F2BC00A5F3BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E43507E822B3F2BC00A5F3BE /* LaunchScreen.storyboard */; };
 		E43507F222B41CFF00A5F3BE /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43507F122B41CFF00A5F3BE /* GraphView.swift */; };
 		E43507F422B678DD00A5F3BE /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43507F322B678DD00A5F3BE /* UserData.swift */; };
-		E44224F122E476FC00A39900 /* CheckMarksNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44224F022E476FC00A39900 /* CheckMarksNewView.swift */; };
 		E4525D8522B7B60200FC7D46 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4525D8422B7B60200FC7D46 /* Chart.swift */; };
 		E4525D8722B7B67300FC7D46 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4525D8622B7B67300FC7D46 /* Data.swift */; };
 		E4525D8922B7B76800FC7D46 /* chart.json in Resources */ = {isa = PBXBuildFile; fileRef = E4525D8822B7B76800FC7D46 /* chart.json */; };
 		E4525D8D22B8093000FC7D46 /* GraphsForChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4525D8C22B8093000FC7D46 /* GraphsForChart.swift */; };
-		E452EBD422C5EE47009A5C50 /* CheckMarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E452EBD322C5EE47009A5C50 /* CheckMarksView.swift */; };
 		E452EBD722C613B9009A5C50 /* YMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E452EBD622C613B9009A5C50 /* YMarkView.swift */; };
 		E453170922C7758B00799861 /* YAxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E453170822C7758B00799861 /* YAxisView.swift */; };
 		E4545D4C22C528D30092E9B6 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4545D4B22C528D30092E9B6 /* ChartView.swift */; };
@@ -28,6 +26,11 @@
 		E477470622D8E8CD00A6F3E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E477470522D8E8CD00A6F3E8 /* Assets.xcassets */; };
 		E477470822DCB7EB00A6F3E8 /* RangeViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477470722DCB7EB00A6F3E8 /* RangeViewNew.swift */; };
 		E477470A22DF4B9800A6F3E8 /* BindingBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477470922DF4B9700A6F3E8 /* BindingBounds.swift */; };
+		E480B48F232C1E5800B1826B /* RangeViewNewGeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B48E232C1E5700B1826B /* RangeViewNewGeo.swift */; };
+		E480B491232FAEC900B1826B /* ListCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B490232FAEC800B1826B /* ListCardsView.swift */; };
+		E480B493232FB49C00B1826B /* CheckMarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B492232FB49B00B1826B /* CheckMarksView.swift */; };
+		E480B4B52331434200B1826B /* SimulatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B4B42331434100B1826B /* SimulatedButton.swift */; };
+		E480B4B72332461F00B1826B /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B4B62332461E00B1826B /* CheckButton.swift */; };
 		E4A0DC5422D074DB00258D79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0DC5322D074DB00258D79 /* SceneDelegate.swift */; };
 		E4A6AF5222F48BFC00DEE5FC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E4A6AF5122F48BFC00DEE5FC /* README.md */; };
 		E4BCCE1222C4958000EB886D /* XAxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BCCE1122C4958000EB886D /* XAxisView.swift */; };
@@ -48,12 +51,10 @@
 		E43507EB22B3F2BC00A5F3BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E43507F122B41CFF00A5F3BE /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		E43507F322B678DD00A5F3BE /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		E44224F022E476FC00A39900 /* CheckMarksNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarksNewView.swift; sourceTree = "<group>"; };
 		E4525D8422B7B60200FC7D46 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		E4525D8622B7B67300FC7D46 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		E4525D8822B7B76800FC7D46 /* chart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chart.json; sourceTree = "<group>"; };
 		E4525D8C22B8093000FC7D46 /* GraphsForChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphsForChart.swift; sourceTree = "<group>"; };
-		E452EBD322C5EE47009A5C50 /* CheckMarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarksView.swift; sourceTree = "<group>"; };
 		E452EBD622C613B9009A5C50 /* YMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMarkView.swift; sourceTree = "<group>"; };
 		E453170822C7758B00799861 /* YAxisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YAxisView.swift; path = RectangleSwiftUI/YAxis/YAxisView.swift; sourceTree = SOURCE_ROOT; };
 		E4545D4B22C528D30092E9B6 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
@@ -61,6 +62,11 @@
 		E477470522D8E8CD00A6F3E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E477470722DCB7EB00A6F3E8 /* RangeViewNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeViewNew.swift; sourceTree = "<group>"; };
 		E477470922DF4B9700A6F3E8 /* BindingBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingBounds.swift; sourceTree = "<group>"; };
+		E480B48E232C1E5700B1826B /* RangeViewNewGeo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeViewNewGeo.swift; sourceTree = "<group>"; };
+		E480B490232FAEC800B1826B /* ListCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsView.swift; sourceTree = "<group>"; };
+		E480B492232FB49B00B1826B /* CheckMarksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckMarksView.swift; sourceTree = "<group>"; };
+		E480B4B42331434100B1826B /* SimulatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedButton.swift; sourceTree = "<group>"; };
+		E480B4B62332461E00B1826B /* CheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
 		E4A0DC5322D074DB00258D79 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E4A6AF5122F48BFC00DEE5FC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E4BCCE1122C4958000EB886D /* XAxisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XAxisView.swift; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 			children = (
 				E4A0DC5322D074DB00258D79 /* SceneDelegate.swift */,
 				E43507E122B3F2BA00A5F3BE /* ContentView.swift */,
+				E480B490232FAEC800B1826B /* ListCardsView.swift */,
 				E4545D4B22C528D30092E9B6 /* ChartView.swift */,
 				E4525D8B22B7F97000FC7D46 /* Model */,
 				E452EBD522C61362009A5C50 /* XAxis */,
@@ -182,8 +189,9 @@
 		E4A6AF5422F4914B00DEE5FC /* CheckMarks */ = {
 			isa = PBXGroup;
 			children = (
-				E452EBD322C5EE47009A5C50 /* CheckMarksView.swift */,
-				E44224F022E476FC00A39900 /* CheckMarksNewView.swift */,
+				E480B492232FB49B00B1826B /* CheckMarksView.swift */,
+				E480B4B42331434100B1826B /* SimulatedButton.swift */,
+				E480B4B62332461E00B1826B /* CheckButton.swift */,
 			);
 			path = CheckMarks;
 			sourceTree = "<group>";
@@ -193,6 +201,7 @@
 			children = (
 				E4D7362222CBB7E90091E307 /* RangeView.swift */,
 				E477470722DCB7EB00A6F3E8 /* RangeViewNew.swift */,
+				E480B48E232C1E5700B1826B /* RangeViewNewGeo.swift */,
 			);
 			path = Range;
 			sourceTree = "<group>";
@@ -272,15 +281,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4525D8722B7B67300FC7D46 /* Data.swift in Sources */,
+				E480B48F232C1E5800B1826B /* RangeViewNewGeo.swift in Sources */,
 				E453170922C7758B00799861 /* YAxisView.swift in Sources */,
-				E44224F122E476FC00A39900 /* CheckMarksNewView.swift in Sources */,
+				E480B4B52331434200B1826B /* SimulatedButton.swift in Sources */,
 				E43507DE22B3F2BA00A5F3BE /* AppDelegate.swift in Sources */,
-				E452EBD422C5EE47009A5C50 /* CheckMarksView.swift in Sources */,
 				E4525D8522B7B60200FC7D46 /* Chart.swift in Sources */,
+				E480B493232FB49C00B1826B /* CheckMarksView.swift in Sources */,
 				E402F25B22CF46940097126F /* YTickerView.swift in Sources */,
 				E477470A22DF4B9800A6F3E8 /* BindingBounds.swift in Sources */,
 				E43507E222B3F2BA00A5F3BE /* ContentView.swift in Sources */,
 				E4525D8D22B8093000FC7D46 /* GraphsForChart.swift in Sources */,
+				E480B491232FAEC900B1826B /* ListCardsView.swift in Sources */,
 				E402F25722CE16710097126F /* IndicatorView.swift in Sources */,
 				E477470822DCB7EB00A6F3E8 /* RangeViewNew.swift in Sources */,
 				E4D7362322CBB7E90091E307 /* RangeView.swift in Sources */,
@@ -288,6 +299,7 @@
 				E46FF88C230BCC3800FF8012 /* GraphViewNew.swift in Sources */,
 				E43507F422B678DD00A5F3BE /* UserData.swift in Sources */,
 				E4BCCE1422C495B700EB886D /* TimeMarkView.swift in Sources */,
+				E480B4B72332461F00B1826B /* CheckButton.swift in Sources */,
 				E4A0DC5422D074DB00258D79 /* SceneDelegate.swift in Sources */,
 				E452EBD722C613B9009A5C50 /* YMarkView.swift in Sources */,
 				E4BCCE1222C4958000EB886D /* XAxisView.swift in Sources */,

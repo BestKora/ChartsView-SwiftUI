@@ -20,21 +20,17 @@ extension AnyTransition {
 }
 
 struct YTickerView : View {
-    @EnvironmentObject var userData: UserData
     
     var chart: LinesSet
-    var indent: CGFloat
     var colorYAxis: Color
     var colorYMark: Color
     
     var estimatedMarksNumber = 6
     
     private var numberPoints: Int {chart.lines[0].points.count }
-    private var rangeTime: Range<Int> {Int(/*userData.charts[chartIndex]*/chart.lowerBound * CGFloat(numberPoints - 1))..<Int(/*userData.charts[chartIndex]*/chart.upperBound * CGFloat(numberPoints - 1)) }
-//    private var chartIndex: Int {userData.chartIndex(chart: chart)}
-    
+    private var rangeTime: Range<Int> {Int(chart.lowerBound * CGFloat(numberPoints - 1))..<Int(chart.upperBound * CGFloat(numberPoints - 1)) }
     var rangeY : Range<Int>? {
-        let rangeY = rangeOfRanges(/*userData.charts[chartIndex]*/chart.lines.filter{!$0.isHidden}.map {$0.points[rangeTime].min()!..<$0.points[rangeTime].max()!})
+        let rangeY = rangeOfRanges(chart.lines.filter{!$0.isHidden}.map {$0.points[rangeTime].min()!..<$0.points[rangeTime].max()!})
         return rangeY == 0..<0 ? 0..<1 : rangeY
     }
     
@@ -47,13 +43,12 @@ struct YTickerView : View {
                 .frame(width: geometry.size.width,
                        height:  self.calcScale(height: geometry.size.height).stepYHeight,
                        alignment: .leading)
-                    .offset(y:( self.calcScale(height: geometry.size.height).scaleY * CGFloat(self.rangeY!.upperBound -  self.calcScale(height: geometry.size.height).marks.last!)))
+                .offset(y:( self.calcScale(height: geometry.size.height).scaleY * CGFloat(self.rangeY!.upperBound -  self.calcScale(height: geometry.size.height).marks.last!)))
                     .animation(.easeInOut(duration: 0.6))
             } //VStack
             .transition(.moveAndFadeMarks)
             
         } //Geometry
-         .padding(self.indent)
          .overlay(YAxisView(color: self.colorYAxis))
     }
     
@@ -75,9 +70,10 @@ struct YTickerView : View {
 #if DEBUG
 struct YTickerView_Previews : PreviewProvider {
     static var previews: some View {
-        YTickerView(chart: chartsData[0], indent: 0, colorYAxis: Color.red, colorYMark: Color.blue)
+        YTickerView(chart: chartsData[0],
+                    colorYAxis: Color.red,
+                    colorYMark: Color.blue)
             .frame(height: 500)
-            .environmentObject(UserData())
         
     }
 }
