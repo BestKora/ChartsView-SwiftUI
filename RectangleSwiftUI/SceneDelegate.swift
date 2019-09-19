@@ -23,10 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView:
-               /* RangeViewNewGeo(chart: chartsData[0])*/
-               /*     ChartView(chart: chartsData[0])*/
-             /* .environmentObject(UserData())*/
-               /*ContentView()*/ListCardsView().environmentObject(UserData()))
+               ContentView()
+                .environmentObject(UserData()))
             self.window = window
             window.makeKeyAndVisible()
         }

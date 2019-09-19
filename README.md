@@ -1,6 +1,6 @@
 # Charts with SwiftUI
 
-For this app Xcode 11 Beta 7 and MacOS Catalina Beta 7 are required.
+For this app Xcode 11 GM and MacOS Catalina GM are required.
 ## It's ChartView:
  
 ![ChartView](ChartView.png)

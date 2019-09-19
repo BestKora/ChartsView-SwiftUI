@@ -12,7 +12,7 @@ struct RangeViewNewGeo: View {
     @EnvironmentObject var userData: UserData
     var chart: LinesSet
     var index: Int {
-             userData.chartIndex(chart: chart) /*firstIndex(where: { $0.id == chart.id })!*/
+             userData.chartIndex(chart: chart)
          }
     
     func rangeTimeFor(indexChat: Int) -> Range<Int> {
@@ -25,9 +25,9 @@ struct RangeViewNewGeo: View {
             VStack (spacing: 10){
         //--------
             ZStack {
-        YTickerView(chart: self.userData.charts[self.index],colorYAxis: Color("ColorTitle"), colorYMark: Color.primary)
-         GraphsForChart(chart: self.userData.charts[self.index], rangeTime: self.rangeTimeFor (indexChat: self.index), lineWidth : 2)
-        IndicatorView(color: Color.secondary, chart: self.userData.charts[self.index],  rangeTime: self.rangeTimeFor (indexChat: self.index))
+                YTickerView(chart: self.userData.charts[self.index],colorYAxis: Color("ColorTitle"), colorYMark: Color.primary)
+                 GraphsForChart(chart: self.userData.charts[self.index], rangeTime: self.rangeTimeFor (indexChat: self.index), lineWidth : 2)
+                IndicatorView(color: Color.secondary, chart: self.userData.charts[self.index],  rangeTime: self.rangeTimeFor (indexChat: self.index))
             } //ZStack
             TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: Color.red, colorXMark: Color.blue, indent: 10)
             .frame(height: geometry.size.height  * 0.06)
@@ -35,12 +35,12 @@ struct RangeViewNewGeo: View {
             RangeViewNew(bounds: Bounds(), widthRange: geometry.size.width, height: 100, chart: chartsData[0] )
             CheckMarksView(chart: self.userData.charts[self.index])
                 .frame(height: geometry.size.height  * 0.05)
-           //     .offset(y: 10)
+          
             Text("\(/*bounds*/self.userData.charts[0].range.upperBound)")
             Text("\(/*bounds*/self.userData.charts[0].range.lowerBound )")
-        }
-    }
-    }
+         } // VStack
+      } //Geometry
+    } // bpsy
 }
 
 struct RangeViewNewGeo_Previews: PreviewProvider {

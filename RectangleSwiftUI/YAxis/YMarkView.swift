@@ -40,20 +40,4 @@ struct YMarkView_Previews : PreviewProvider {
 }
 #endif
 
-extension Int {
-    func formatnumber() -> String {
-        let formater = NumberFormatter()
-        formater.groupingSeparator = " "
-        formater.numberStyle = .decimal
-        formater.maximumFractionDigits = 1
-        if 1000 < self  && self < 999000 {
-            let newValue = (Double(self) / Double(1000))
-            return (formater.string(from: NSNumber(value: newValue))! + " K")
-        }
-        if 1000000 < self  && self < 999000000 {
-            let newValue = Double(self) / Double(1000000)
-            return (formater.string(from: NSNumber(value: newValue ))! + " M")
-        }
-        return formater.string(from: NSNumber(value: self))!
-    }
-}
+

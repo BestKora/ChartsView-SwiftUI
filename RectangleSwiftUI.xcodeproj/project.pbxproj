@@ -27,10 +27,14 @@
 		E477470822DCB7EB00A6F3E8 /* RangeViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477470722DCB7EB00A6F3E8 /* RangeViewNew.swift */; };
 		E477470A22DF4B9800A6F3E8 /* BindingBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477470922DF4B9700A6F3E8 /* BindingBounds.swift */; };
 		E480B48F232C1E5800B1826B /* RangeViewNewGeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B48E232C1E5700B1826B /* RangeViewNewGeo.swift */; };
-		E480B491232FAEC900B1826B /* ListCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B490232FAEC800B1826B /* ListCardsView.swift */; };
+		E480B491232FAEC900B1826B /* ListChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B490232FAEC800B1826B /* ListChartsView.swift */; };
 		E480B493232FB49C00B1826B /* CheckMarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B492232FB49B00B1826B /* CheckMarksView.swift */; };
 		E480B4B52331434200B1826B /* SimulatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B4B42331434100B1826B /* SimulatedButton.swift */; };
 		E480B4B72332461F00B1826B /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B4B62332461E00B1826B /* CheckButton.swift */; };
+		E480B4B9233361F600B1826B /* HStackChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B4B8233361F400B1826B /* HStackChartsView.swift */; };
+		E480B4BB2333716C00B1826B /* OverlayCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B4BA2333716B00B1826B /* OverlayCardsView.swift */; };
+		E480B4BE2333C3AE00B1826B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B4BD2333C3AD00B1826B /* Extensions.swift */; };
+		E480B4C02333CDA000B1826B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B4BF2333CD9F00B1826B /* CardView.swift */; };
 		E4A0DC5422D074DB00258D79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0DC5322D074DB00258D79 /* SceneDelegate.swift */; };
 		E4A6AF5222F48BFC00DEE5FC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E4A6AF5122F48BFC00DEE5FC /* README.md */; };
 		E4BCCE1222C4958000EB886D /* XAxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BCCE1122C4958000EB886D /* XAxisView.swift */; };
@@ -63,10 +67,14 @@
 		E477470722DCB7EB00A6F3E8 /* RangeViewNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeViewNew.swift; sourceTree = "<group>"; };
 		E477470922DF4B9700A6F3E8 /* BindingBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingBounds.swift; sourceTree = "<group>"; };
 		E480B48E232C1E5700B1826B /* RangeViewNewGeo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeViewNewGeo.swift; sourceTree = "<group>"; };
-		E480B490232FAEC800B1826B /* ListCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCardsView.swift; sourceTree = "<group>"; };
+		E480B490232FAEC800B1826B /* ListChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListChartsView.swift; sourceTree = "<group>"; };
 		E480B492232FB49B00B1826B /* CheckMarksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckMarksView.swift; sourceTree = "<group>"; };
 		E480B4B42331434100B1826B /* SimulatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedButton.swift; sourceTree = "<group>"; };
 		E480B4B62332461E00B1826B /* CheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
+		E480B4B8233361F400B1826B /* HStackChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackChartsView.swift; sourceTree = "<group>"; };
+		E480B4BA2333716B00B1826B /* OverlayCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayCardsView.swift; sourceTree = "<group>"; };
+		E480B4BD2333C3AD00B1826B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E480B4BF2333CD9F00B1826B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E4A0DC5322D074DB00258D79 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E4A6AF5122F48BFC00DEE5FC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E4BCCE1122C4958000EB886D /* XAxisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XAxisView.swift; sourceTree = "<group>"; };
@@ -120,8 +128,9 @@
 			children = (
 				E4A0DC5322D074DB00258D79 /* SceneDelegate.swift */,
 				E43507E122B3F2BA00A5F3BE /* ContentView.swift */,
-				E480B490232FAEC800B1826B /* ListCardsView.swift */,
+				E480B4BF2333CD9F00B1826B /* CardView.swift */,
 				E4545D4B22C528D30092E9B6 /* ChartView.swift */,
+				E480B4BC2333C32400B1826B /* CompositionOfViews */,
 				E4525D8B22B7F97000FC7D46 /* Model */,
 				E452EBD522C61362009A5C50 /* XAxis */,
 				E452EBDC22C62FCB009A5C50 /* YAxis */,
@@ -162,6 +171,7 @@
 				E4525D8622B7B67300FC7D46 /* Data.swift */,
 				E43507F322B678DD00A5F3BE /* UserData.swift */,
 				E477470922DF4B9700A6F3E8 /* BindingBounds.swift */,
+				E480B4BD2333C3AD00B1826B /* Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +194,16 @@
 				E452EBD622C613B9009A5C50 /* YMarkView.swift */,
 			);
 			path = YAxis;
+			sourceTree = "<group>";
+		};
+		E480B4BC2333C32400B1826B /* CompositionOfViews */ = {
+			isa = PBXGroup;
+			children = (
+				E480B4BA2333716B00B1826B /* OverlayCardsView.swift */,
+				E480B4B8233361F400B1826B /* HStackChartsView.swift */,
+				E480B490232FAEC800B1826B /* ListChartsView.swift */,
+			);
+			path = CompositionOfViews;
 			sourceTree = "<group>";
 		};
 		E4A6AF5422F4914B00DEE5FC /* CheckMarks */ = {
@@ -285,14 +305,17 @@
 				E453170922C7758B00799861 /* YAxisView.swift in Sources */,
 				E480B4B52331434200B1826B /* SimulatedButton.swift in Sources */,
 				E43507DE22B3F2BA00A5F3BE /* AppDelegate.swift in Sources */,
+				E480B4B9233361F600B1826B /* HStackChartsView.swift in Sources */,
 				E4525D8522B7B60200FC7D46 /* Chart.swift in Sources */,
+				E480B4BB2333716C00B1826B /* OverlayCardsView.swift in Sources */,
 				E480B493232FB49C00B1826B /* CheckMarksView.swift in Sources */,
 				E402F25B22CF46940097126F /* YTickerView.swift in Sources */,
 				E477470A22DF4B9800A6F3E8 /* BindingBounds.swift in Sources */,
 				E43507E222B3F2BA00A5F3BE /* ContentView.swift in Sources */,
 				E4525D8D22B8093000FC7D46 /* GraphsForChart.swift in Sources */,
-				E480B491232FAEC900B1826B /* ListCardsView.swift in Sources */,
+				E480B491232FAEC900B1826B /* ListChartsView.swift in Sources */,
 				E402F25722CE16710097126F /* IndicatorView.swift in Sources */,
+				E480B4C02333CDA000B1826B /* CardView.swift in Sources */,
 				E477470822DCB7EB00A6F3E8 /* RangeViewNew.swift in Sources */,
 				E4D7362322CBB7E90091E307 /* RangeView.swift in Sources */,
 				E4545D4C22C528D30092E9B6 /* ChartView.swift in Sources */,
@@ -305,6 +328,7 @@
 				E4BCCE1222C4958000EB886D /* XAxisView.swift in Sources */,
 				E4BCCE1622C495D900EB886D /* TickerView.swift in Sources */,
 				E43507F222B41CFF00A5F3BE /* GraphView.swift in Sources */,
+				E480B4BE2333C3AE00B1826B /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

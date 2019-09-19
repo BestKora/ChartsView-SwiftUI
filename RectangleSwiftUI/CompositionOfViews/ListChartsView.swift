@@ -1,5 +1,5 @@
 //
-//  ListCardsView.swift
+//  ListChartsView.swift
 //  RectangleSwiftUI
 //
 //  Created by Tatiana Kornilova on 16/09/2019.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ListCardsView: View {
+struct ListChartsView: View {
     // List
     @EnvironmentObject var userData: UserData
     
@@ -26,10 +26,10 @@ struct ListCardsView: View {
     }
 }
 
-struct ListCardsView_Previews: PreviewProvider {
+struct ListChartsView_Previews: PreviewProvider {
     static var previews: some View {
         
-        ListCardsView()
+        ListChartsView()
         .environmentObject(UserData())
         .colorScheme(.dark)
         

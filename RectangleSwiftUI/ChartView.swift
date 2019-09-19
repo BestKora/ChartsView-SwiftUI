@@ -56,7 +56,7 @@ struct ChartView : View {
                 .environmentObject(self.userData)
  
             CheckMarksView(chart: self.userData.charts[self.index])
-            .frame(height: geometry.size.height  * 0.05)/*height: geometry.size.height  * 0.05, width: geometry.size.width)*/
+            .frame(height: geometry.size.height  * 0.05)
             Text(" ").font(.footnote)
         } // VStack
         } // Geometry

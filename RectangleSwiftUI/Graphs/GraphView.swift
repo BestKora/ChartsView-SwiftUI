@@ -8,12 +8,6 @@
 
 import SwiftUI
 
-extension Range where Bound: Numeric {
-    var distance: Bound {
-        return upperBound - lowerBound
-    }
-}
-
 struct GraphView : View {
     var rangeTime: Range<Int>
     var line: Line
