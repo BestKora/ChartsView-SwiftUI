@@ -33,7 +33,7 @@ struct RangeViewNewGeo: View {
             .frame(height: geometry.size.height  * 0.06)
         //--------
             RangeViewNew(bounds: Bounds(), widthRange: geometry.size.width, height: 100, chart: chartsData[0] )
-            CheckMarksNewView(chart: self.userData.charts[self.index])
+            CheckMarksView(chart: self.userData.charts[self.index])
                 .frame(height: geometry.size.height  * 0.05)
            //     .offset(y: 10)
             Text("\(/*bounds*/self.userData.charts[0].range.upperBound)")
