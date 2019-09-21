@@ -69,7 +69,7 @@ struct Line: Equatable, Identifiable  {
     var color: UIColor?
     var isHidden: Bool = false
     var type: String?
-    var minY : Int?
-    var maxY : Int?
+ //   var minY : Int?
+ //   var maxY : Int?
     var countY = 0
 }

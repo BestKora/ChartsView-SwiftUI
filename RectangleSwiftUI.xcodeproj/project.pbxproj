@@ -35,6 +35,7 @@
 		E480B4BB2333716C00B1826B /* OverlayCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B4BA2333716B00B1826B /* OverlayCardsView.swift */; };
 		E480B4BE2333C3AE00B1826B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B4BD2333C3AD00B1826B /* Extensions.swift */; };
 		E480B4C02333CDA000B1826B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B4BF2333CD9F00B1826B /* CardView.swift */; };
+		E480B4C22334E4FE00B1826B /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B4C12334E4FE00B1826B /* CheckBoxView.swift */; };
 		E4A0DC5422D074DB00258D79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0DC5322D074DB00258D79 /* SceneDelegate.swift */; };
 		E4A6AF5222F48BFC00DEE5FC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E4A6AF5122F48BFC00DEE5FC /* README.md */; };
 		E4BCCE1222C4958000EB886D /* XAxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BCCE1122C4958000EB886D /* XAxisView.swift */; };
@@ -75,6 +76,7 @@
 		E480B4BA2333716B00B1826B /* OverlayCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayCardsView.swift; sourceTree = "<group>"; };
 		E480B4BD2333C3AD00B1826B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E480B4BF2333CD9F00B1826B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E480B4C12334E4FE00B1826B /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		E4A0DC5322D074DB00258D79 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E4A6AF5122F48BFC00DEE5FC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E4BCCE1122C4958000EB886D /* XAxisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XAxisView.swift; sourceTree = "<group>"; };
@@ -128,8 +130,6 @@
 			children = (
 				E4A0DC5322D074DB00258D79 /* SceneDelegate.swift */,
 				E43507E122B3F2BA00A5F3BE /* ContentView.swift */,
-				E480B4BF2333CD9F00B1826B /* CardView.swift */,
-				E4545D4B22C528D30092E9B6 /* ChartView.swift */,
 				E480B4BC2333C32400B1826B /* CompositionOfViews */,
 				E4525D8B22B7F97000FC7D46 /* Model */,
 				E452EBD522C61362009A5C50 /* XAxis */,
@@ -199,6 +199,8 @@
 		E480B4BC2333C32400B1826B /* CompositionOfViews */ = {
 			isa = PBXGroup;
 			children = (
+				E480B4BF2333CD9F00B1826B /* CardView.swift */,
+				E4545D4B22C528D30092E9B6 /* ChartView.swift */,
 				E480B4BA2333716B00B1826B /* OverlayCardsView.swift */,
 				E480B4B8233361F400B1826B /* HStackChartsView.swift */,
 				E480B490232FAEC800B1826B /* ListChartsView.swift */,
@@ -212,6 +214,7 @@
 				E480B492232FB49B00B1826B /* CheckMarksView.swift */,
 				E480B4B42331434100B1826B /* SimulatedButton.swift */,
 				E480B4B62332461E00B1826B /* CheckButton.swift */,
+				E480B4C12334E4FE00B1826B /* CheckBoxView.swift */,
 			);
 			path = CheckMarks;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4525D8722B7B67300FC7D46 /* Data.swift in Sources */,
+				E480B4C22334E4FE00B1826B /* CheckBoxView.swift in Sources */,
 				E480B48F232C1E5800B1826B /* RangeViewNewGeo.swift in Sources */,
 				E453170922C7758B00799861 /* YAxisView.swift in Sources */,
 				E480B4B52331434200B1826B /* SimulatedButton.swift in Sources */,

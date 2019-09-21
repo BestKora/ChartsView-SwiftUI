@@ -27,7 +27,7 @@ struct RangeView : View {
     var body: some View {
         HStack (spacing: 0) {
             Rectangle()
-                .frame(width:self.widthRectangle1, height: self.height, alignment: .leading)
+                .frame(width:self.widthRectangle1)
                 .foregroundColor(Color("ColorRangeViewTint"))
                 .gesture(DragGesture(minimumDistance: 0)
                     .onChanged (onDragChangedRectangle1)
@@ -35,8 +35,9 @@ struct RangeView : View {
                         self.prevTranslation = 0.0
                     }
             )
+            
             Image(uiImage: UIImage(named: self.selectionImage)!)
-                .frame(width: self.widthImage, height: self.height, alignment: .leading)
+                .frame(width: self.widthImage)
                 .gesture(DragGesture(minimumDistance: 0)
                     .onChanged (onDragChangedImage)
                     .onEnded { value in
@@ -44,7 +45,7 @@ struct RangeView : View {
                     }
             )
             Rectangle()
-                .frame(width: self.widthRectangle2, height: self.height, alignment: .leading)
+                .frame(width: self.widthRectangle2)
                 .foregroundColor(Color("ColorRangeViewTint"))
                 .gesture(DragGesture(minimumDistance: 0)
                     .onChanged (onDragChangedRectangle2)
@@ -55,13 +56,12 @@ struct RangeView : View {
         } // HStack
             .frame(width: self.widthRange, height: self.height,  alignment: .topLeading)
             .overlay(GraphsForChart(chart: self.chart,rangeTime: 0..<(self.numberPoints - 1))
-                .padding(self.indent)
+            .padding(self.indent)
             )
     } //body
     
     private var rightBorder: CGFloat  {(userData.charts[self.chartIndex].upperBound - userData.charts[self.chartIndex].lowerBound)  * widthRange}
     private let defaultMinimumRangeDistance: CGFloat = 0.05
-    private var numberLines: Int { chart.lines.count}
     private var numberPoints: Int {chart.xTime.count }
     private var selectionImage: String {colorSchema == ColorScheme.light ? "selection_frame_light" : "selection_frame_dark" }
     

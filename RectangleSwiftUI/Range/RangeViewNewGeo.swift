@@ -25,7 +25,7 @@ struct RangeViewNewGeo: View {
             VStack (spacing: 10){
         //--------
             ZStack {
-                YTickerView(chart: self.userData.charts[self.index],colorYAxis: Color("ColorTitle"), colorYMark: Color.primary)
+                YTickerView(chart: self.userData.charts[self.index],rangeTime: self.rangeTimeFor (indexChat: self.index),colorYAxis: Color("ColorTitle"), colorYMark: Color.primary)
                  GraphsForChart(chart: self.userData.charts[self.index], rangeTime: self.rangeTimeFor (indexChat: self.index), lineWidth : 2)
                 IndicatorView(color: Color.secondary, chart: self.userData.charts[self.index],  rangeTime: self.rangeTimeFor (indexChat: self.index))
             } //ZStack

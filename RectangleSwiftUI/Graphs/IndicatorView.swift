@@ -21,8 +21,8 @@ struct IndicatorView : View {
     
     private var zViewTintColor: Color {
         colorSchema == ColorScheme.light ?
-            Color(red: 87/255.0, green: 87/255.0, blue: 87/255.0, opacity: 0.1) :
-            Color(red: 209/255.0, green: 209/255.0, blue: 204/255.0, opacity: 0.4)
+            Color(red: 229/255.0, green: 229/255.0, blue: 229/255.0, opacity: 0.8) :
+            Color(red: 67/255.0, green: 67/255.0, blue: 67/255.0, opacity: 0.8)
     }
  
     private var rangeY : Range<Int>? {
@@ -119,8 +119,8 @@ struct IndicatorView_Previews : PreviewProvider {
     static var previews: some View {
          NavigationView {
             ZStack {
-                GraphsForChart(chart: chartsData[0], rangeTime: 18..<40/*(chartsData[0].xTime.count - 1)*/, lineWidth : 2)
-                IndicatorView(color: Color.secondary, chart: chartsData[0],  rangeTime: 18..<40/*(chartsData[0].lines[0].points.count -1)*/)
+                GraphsForChart(chart: chartsData[4], rangeTime: 18..<40/*0..<(chartsData[0].xTime.count - 1)*/, lineWidth : 2)
+                IndicatorView(color: Color.secondary, chart: chartsData[4],  rangeTime: 18..<40/*0..<(chartsData[0].lines[0].points.count -1)*/)
             }
         }
          .colorScheme(.dark)

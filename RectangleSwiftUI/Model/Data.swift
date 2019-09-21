@@ -83,8 +83,8 @@ func convertToInternalModel(_ chatti: ChartElement ) -> LinesSet {
                               color: chatti.colors.y0.hexStringToUIColor(),
                               isHidden: false,
                               type: chatti.types.y0,
-                              minY: values.min(),
-                              maxY: values.max(),
+                         //     minY: values.min(),
+                         //     maxY: values.max(),
                               countY: values.count))
         case "y1" :
             lines.append(Line(id: lines.count,
@@ -93,8 +93,8 @@ func convertToInternalModel(_ chatti: ChartElement ) -> LinesSet {
                               color: chatti.colors.y1.hexStringToUIColor(),
                               isHidden: false,
                               type: chatti.types.y1,
-                              minY: values.min(),
-                              maxY: values.max(),
+                        //      minY: values.min(),
+                        //      maxY: values.max(),
                               countY: values.count))
         case "y2" :
             lines.append(Line(id: lines.count,
@@ -103,8 +103,8 @@ func convertToInternalModel(_ chatti: ChartElement ) -> LinesSet {
                               color: chatti.colors.y2 != nil ? chatti.colors.y2!.hexStringToUIColor() : nil,
                               isHidden: false,
                               type: chatti.types.y2,
-                              minY: values.min(),
-                              maxY: values.max(),
+                         //     minY: values.min(),
+                         //     maxY: values.max(),
                               countY: values.count))
         case "y3" :
             lines.append(Line(id: lines.count,
@@ -113,8 +113,8 @@ func convertToInternalModel(_ chatti: ChartElement ) -> LinesSet {
                               color: chatti.colors.y3 != nil ? chatti.colors.y3!.hexStringToUIColor() : nil,
                               isHidden: false,
                               type: chatti.types.y3,
-                              minY: values.min(),
-                              maxY: values.max(),
+                        //      minY: values.min(),
+                        //      maxY: values.max(),
                               countY: values.count))
         default: break
         }

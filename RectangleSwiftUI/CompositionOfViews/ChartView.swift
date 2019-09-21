@@ -8,9 +8,35 @@
 
 import SwiftUI
 
+struct GraphsViewForChart: View {
+    @Environment(\.colorScheme) var colorSchema: ColorScheme
+    
+    var chart: LinesSet
+    var rangeTime: Range<Int>
+    var colorXAxis: Color = Color.secondary
+    var colorXMark: Color = Color.primary
+ 
+    private var indicatorColor: Color {
+        colorSchema == ColorScheme.light ?
+            Color.blue : Color.yellow
+    }
+    
+      var body: some View {
+         GeometryReader { geometry in
+              ZStack{
+                YTickerView(chart:  self.chart,rangeTime: self.rangeTime, colorYAxis: Color("ColorTitle"), colorYMark: Color.primary)
+                       
+                GraphsForChart(chart:  self.chart, rangeTime: self.rangeTime, lineWidth : 2)
+                    
+                IndicatorView (color: self.indicatorColor, chart: self.chart, rangeTime: self.rangeTime)
+                } // ZStack
+        } //Geometry
+    } // body
+    
+}
+
 struct ChartView : View {
     @EnvironmentObject var userData: UserData
-    @Environment(\.colorScheme) var colorSchema: ColorScheme
     
     var chart: LinesSet
     var colorXAxis: Color = Color.secondary
@@ -20,11 +46,6 @@ struct ChartView : View {
     var index: Int {
            userData.charts.firstIndex(where: { $0.id == chart.id })!
        }
-    
-    private var indicatorColor: Color {
-        colorSchema == ColorScheme.light ?
-            Color.blue : Color.yellow
-    }
     
     func rangeTimeFor(indexChat: Int) -> Range<Int> {
         let numberPoints = userData.charts[indexChat].xTime.count
@@ -38,14 +59,12 @@ struct ChartView : View {
             Text("   CHART \(self.index + 1):  \(self.chart.xTime.first!) - \(self.chart.xTime.last!)  \(self.chart.lines.count)  lines")
             .font(.headline)
             .foregroundColor(Color("ColorTitle"))
+            
             Text(" ").font(.footnote)
-            ZStack{
-                YTickerView(chart: self.userData.charts[self.index], colorYAxis: Color("ColorTitle"), colorYMark: Color.primary)
-                
-                GraphsForChart(chart: self.userData.charts[self.index], rangeTime: self.rangeTimeFor (indexChat: self.index), lineWidth : 2)
-             
-                IndicatorView (color: self.indicatorColor, chart: self.userData.charts[self.index], rangeTime: self.rangeTimeFor (indexChat: self.index))
-            }
+            
+            GraphsViewForChart(
+                chart: self.userData.charts[self.index],
+                rangeTime: self.rangeTimeFor (indexChat: self.index))
             .padding(self.indent)
             .frame(height: geometry.size.height  * 0.63)
             

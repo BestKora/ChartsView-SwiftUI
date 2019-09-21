@@ -18,25 +18,20 @@ struct CardView: View {
     
     var chart: LinesSet
     
-    var index: Int {
-        userData.charts.firstIndex(where: { $0.id == chart.id })!
-    }
-    
     var indent: CGFloat = 0
     var colorXAxis: Color = Color.secondary
     var colorXMark: Color = Color.primary
     
-    private var indicatorColor: Color {
-        colorSchema == ColorScheme.light ?
-            Color.blue : Color.yellow
-    }
-    
+    private var index: Int {
+           userData.charts.firstIndex(where: { $0.id == chart.id })!
+       }
+
     private var cardBackgroundColor: Color {
         colorSchema == ColorScheme.light ?
             Color(white: 0.97) : Color(white: 0.18)
     }
     
-    func rangeTimeFor(indexChat: Int) -> Range<Int> {
+    private func rangeTimeFor(indexChat: Int) -> Range<Int> {
         let numberPoints = userData.charts[indexChat].xTime.count
         let rangeTime: Range<Int>  = 0..<(numberPoints - 1)
         return rangeTime
@@ -49,16 +44,12 @@ struct CardView: View {
                          Text("   CHART \(self.index + 1):  \(self.chart.xTime.first!) - \(self.chart.xTime.last!)  \(self.chart.lines.count)  lines")
                            .font(.subheadline)
                            .foregroundColor(Color("ColorTitle"))
-                       Text(" ").font(.footnote)
-                         ZStack{
-                             YTickerView(chart: self.userData.charts[self.index], colorYAxis: Color("ColorTitle"), colorYMark: Color.primary)
-                             
-                             GraphsForChart(chart: self.userData.charts[self.index], rangeTime: self.rangeTimeFor (indexChat: self.index), lineWidth : 2)
-                             .padding(self.indent)
-                          
-                             IndicatorView (color: self.indicatorColor, chart: self.userData.charts[self.index], rangeTime: self.rangeTimeFor (indexChat: self.index))
-                                     .padding(self.indent)
-                         }
+                        
+                        Text(" ").font(.footnote)
+                  
+                        GraphsViewForChart(
+                            chart: self.userData.charts[self.index],
+                            rangeTime: self.rangeTimeFor (indexChat: self.index))
                          .frame(height: geometry.size.height  * 0.78)
                      
                          TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark, indent: self.indent)
