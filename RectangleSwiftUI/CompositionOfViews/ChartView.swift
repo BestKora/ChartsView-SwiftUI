@@ -8,33 +8,6 @@
 
 import SwiftUI
 
-struct GraphsViewForChart: View {
-    @Environment(\.colorScheme) var colorSchema: ColorScheme
-    
-    var chart: LinesSet
-    var rangeTime: Range<Int>
-    var colorXAxis: Color = Color.secondary
-    var colorXMark: Color = Color.primary
- 
-    private var indicatorColor: Color {
-        colorSchema == ColorScheme.light ?
-            Color.blue : Color.yellow
-    }
-    
-      var body: some View {
-         GeometryReader { geometry in
-              ZStack{
-                YTickerView(chart:  self.chart,rangeTime: self.rangeTime, colorYAxis: Color("ColorTitle"), colorYMark: Color.primary)
-                       
-                GraphsForChart(chart:  self.chart, rangeTime: self.rangeTime, lineWidth : 2)
-                    
-                IndicatorView (color: self.indicatorColor, chart: self.chart, rangeTime: self.rangeTime)
-                } // ZStack
-        } //Geometry
-    } // body
-    
-}
-
 struct ChartView : View {
     @EnvironmentObject var userData: UserData
     

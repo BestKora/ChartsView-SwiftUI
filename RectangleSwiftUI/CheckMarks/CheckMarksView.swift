@@ -21,8 +21,8 @@ struct CheckMarksView : View {
             HStack (alignment: .top) {
                 ForEach( self.chart.lines){ line in
                     SimulatedButton(line:  self.$userData.charts[self.chartIndex].lines[self.lineIndex(line: line)])
-               //   CheckButton(line:
-               //       self.$userData.charts[self.chartIndex].lines[self.lineIndex(line: line)])
+                 // CheckButton(line:
+                 // self.$userData.charts[self.chartIndex].lines[self.lineIndex(line: line)])
                 } // ForEach
             } // HStack
                 .frame(width: geometry.size.width, height: geometry.size.height,  alignment: .topLeading)
