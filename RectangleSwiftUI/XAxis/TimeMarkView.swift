@@ -31,7 +31,6 @@ struct TimeMarkView : View {
     }
 }
 
-#if DEBUG
 struct TimeMarkView_Previews : PreviewProvider {
     static var previews: some View {
         TimeMarkView(index: 0,xTime: chartsData[0].xTime, colorXAxis: Color.red, colorXMark: Color.black)
@@ -39,4 +38,3 @@ struct TimeMarkView_Previews : PreviewProvider {
             .padding(20)
     }
 }
-#endif

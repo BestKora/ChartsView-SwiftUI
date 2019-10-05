@@ -30,7 +30,6 @@ struct CheckMarksView : View {
     } // body
 }
 
-#if DEBUG
 struct CheckMarksView_Previews : PreviewProvider {
     static var previews: some View {
         NavigationView {
@@ -41,4 +40,3 @@ struct CheckMarksView_Previews : PreviewProvider {
         .colorScheme(.dark)
     }
 }
-#endif

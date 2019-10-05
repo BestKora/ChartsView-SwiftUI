@@ -12,10 +12,11 @@ import Combine
 
 let columns: [ChartElement] = load("chart.json")
 let chartsData : [LinesSet]  =  addID( charts: columns.compactMap { convertToInternalModel($0)})
- 
-/* let columns: ChartElement = load("overview.json")
- let chartsData : [LinesSet]  =  addID( charts: [columns].compactMap { convertToInternalModel($0)})
- */
+
+ //  ------ another JSON файл ------
+let columns1: ChartElement = load("overview.json")
+let chartsData1 : [LinesSet]  =  addID( charts: [columns1].compactMap { convertToInternalModel($0)})
+//---------------------------------
 
 func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
     let data: Data

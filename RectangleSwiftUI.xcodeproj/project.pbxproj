@@ -16,7 +16,6 @@
 		E43507F222B41CFF00A5F3BE /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43507F122B41CFF00A5F3BE /* GraphView.swift */; };
 		E43507F422B678DD00A5F3BE /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43507F322B678DD00A5F3BE /* UserData.swift */; };
 		E4525D8522B7B60200FC7D46 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4525D8422B7B60200FC7D46 /* Chart.swift */; };
-		E4525D8722B7B67300FC7D46 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4525D8622B7B67300FC7D46 /* Data.swift */; };
 		E4525D8922B7B76800FC7D46 /* chart.json in Resources */ = {isa = PBXBuildFile; fileRef = E4525D8822B7B76800FC7D46 /* chart.json */; };
 		E4525D8D22B8093000FC7D46 /* GraphsForChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4525D8C22B8093000FC7D46 /* GraphsForChart.swift */; };
 		E452EBD722C613B9009A5C50 /* YMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E452EBD622C613B9009A5C50 /* YMarkView.swift */; };
@@ -39,6 +38,8 @@
 		E480B4C22334E4FE00B1826B /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480B4C12334E4FE00B1826B /* CheckBoxView.swift */; };
 		E4A0DC5422D074DB00258D79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0DC5322D074DB00258D79 /* SceneDelegate.swift */; };
 		E4A6AF5222F48BFC00DEE5FC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E4A6AF5122F48BFC00DEE5FC /* README.md */; };
+		E4ACE11B2341E83C008E85A0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ACE11A2341E83C008E85A0 /* Data.swift */; };
+		E4ACE11D23436005008E85A0 /* RangeView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ACE11C23436004008E85A0 /* RangeView1.swift */; };
 		E4BCCE1222C4958000EB886D /* XAxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BCCE1122C4958000EB886D /* XAxisView.swift */; };
 		E4BCCE1422C495B700EB886D /* TimeMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BCCE1322C495B700EB886D /* TimeMarkView.swift */; };
 		E4BCCE1622C495D900EB886D /* TickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BCCE1522C495D900EB886D /* TickerView.swift */; };
@@ -58,7 +59,6 @@
 		E43507F122B41CFF00A5F3BE /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		E43507F322B678DD00A5F3BE /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		E4525D8422B7B60200FC7D46 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
-		E4525D8622B7B67300FC7D46 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		E4525D8822B7B76800FC7D46 /* chart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chart.json; sourceTree = "<group>"; };
 		E4525D8C22B8093000FC7D46 /* GraphsForChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphsForChart.swift; sourceTree = "<group>"; };
 		E452EBD622C613B9009A5C50 /* YMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YMarkView.swift; sourceTree = "<group>"; };
@@ -81,6 +81,8 @@
 		E480B4C12334E4FE00B1826B /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		E4A0DC5322D074DB00258D79 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E4A6AF5122F48BFC00DEE5FC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E4ACE11A2341E83C008E85A0 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		E4ACE11C23436004008E85A0 /* RangeView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeView1.swift; sourceTree = "<group>"; };
 		E4BCCE1122C4958000EB886D /* XAxisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XAxisView.swift; sourceTree = "<group>"; };
 		E4BCCE1322C495B700EB886D /* TimeMarkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeMarkView.swift; sourceTree = "<group>"; };
 		E4BCCE1522C495D900EB886D /* TickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerView.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				E4A0DC5322D074DB00258D79 /* SceneDelegate.swift */,
 				E43507E122B3F2BA00A5F3BE /* ContentView.swift */,
+				E480B4BD2333C3AD00B1826B /* Extensions.swift */,
 				E480B4BC2333C32400B1826B /* CompositionOfViews */,
 				E4525D8B22B7F97000FC7D46 /* Model */,
 				E452EBD522C61362009A5C50 /* XAxis */,
@@ -170,10 +173,9 @@
 			isa = PBXGroup;
 			children = (
 				E4525D8422B7B60200FC7D46 /* Chart.swift */,
-				E4525D8622B7B67300FC7D46 /* Data.swift */,
+				E4ACE11A2341E83C008E85A0 /* Data.swift */,
 				E43507F322B678DD00A5F3BE /* UserData.swift */,
 				E477470922DF4B9700A6F3E8 /* BindingBounds.swift */,
-				E480B4BD2333C3AD00B1826B /* Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				E4D7362222CBB7E90091E307 /* RangeView.swift */,
+				E4ACE11C23436004008E85A0 /* RangeView1.swift */,
 				E477470722DCB7EB00A6F3E8 /* RangeViewNew.swift */,
 				E480B48E232C1E5700B1826B /* RangeViewNewGeo.swift */,
 			);
@@ -306,11 +309,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4525D8722B7B67300FC7D46 /* Data.swift in Sources */,
 				E480B4C22334E4FE00B1826B /* CheckBoxView.swift in Sources */,
 				E480B48F232C1E5800B1826B /* RangeViewNewGeo.swift in Sources */,
 				E453170922C7758B00799861 /* YAxisView.swift in Sources */,
 				E468D2F6233A8C90006A361D /* GraphsViewForChart.swift in Sources */,
+				E4ACE11D23436005008E85A0 /* RangeView1.swift in Sources */,
 				E480B4B52331434200B1826B /* SimulatedButton.swift in Sources */,
 				E43507DE22B3F2BA00A5F3BE /* AppDelegate.swift in Sources */,
 				E480B4B9233361F600B1826B /* HStackChartsView.swift in Sources */,
@@ -320,6 +323,7 @@
 				E402F25B22CF46940097126F /* YTickerView.swift in Sources */,
 				E477470A22DF4B9800A6F3E8 /* BindingBounds.swift in Sources */,
 				E43507E222B3F2BA00A5F3BE /* ContentView.swift in Sources */,
+				E4ACE11B2341E83C008E85A0 /* Data.swift in Sources */,
 				E4525D8D22B8093000FC7D46 /* GraphsForChart.swift in Sources */,
 				E480B491232FAEC900B1826B /* ListChartsView.swift in Sources */,
 				E402F25722CE16710097126F /* IndicatorView.swift in Sources */,

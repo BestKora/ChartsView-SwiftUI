@@ -18,17 +18,15 @@ struct YAxisView : View {
                     path.addLine(to: CGPoint(x:10 , y: geometry.size.height))
                     }
                     .stroke(self.color, lineWidth: 2)
-                }
+            }
         }
     }
 }
 
-#if DEBUG
 struct YAxisView_Previews : PreviewProvider {
     static var previews: some View {
         YAxisView(color: Color.red)
             .frame(height: 100)
     }
 }
-#endif
 

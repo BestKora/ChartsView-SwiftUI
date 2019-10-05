@@ -17,7 +17,6 @@ struct ListChartsView: View {
         GeometryReader{ geometry in
            List (0..<self.userData.charts.count, id:\.self){ indexChat in
                ChartView(chart: self.userData.charts[indexChat])
-                    .environmentObject(UserData())
                     .frame(height: geometry.size.height)
             }// List
             .navigationBarTitle(Text("Folowers"))

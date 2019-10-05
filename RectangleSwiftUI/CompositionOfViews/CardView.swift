@@ -37,9 +37,9 @@ struct CardView: View {
         return rangeTime
     }
     var body: some View {
+        GeometryReader { geometry in
         ZStack{
              self.cardBackgroundColor
-              GeometryReader { geometry in
                      VStack  (alignment: .leading, spacing: 10) {
                          Text("   CHART \(self.index + 1):  \(self.chart.xTime.first!) - \(self.chart.xTime.last!)  \(self.chart.lines.count)  lines")
                            .font(.subheadline)
@@ -52,14 +52,13 @@ struct CardView: View {
                             rangeTime: self.rangeTimeFor (indexChat: self.index))
                          .frame(height: geometry.size.height  * 0.78)
                      
-                         TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark, indent: self.indent)
+                        TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark, indent: self.indent, widthRange: geometry.size.width)
                        .frame(height: geometry.size.height  * 0.06)
                      } // VStack
                      } // Geometry
                  } //Zstack
                .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 2).foregroundColor(Color.primary))
                .cornerRadius(20)
-               .padding()
     }
 }
 

@@ -36,7 +36,7 @@ struct GraphsViewForChart: View {
 struct GraphsViewForChart_Previews: PreviewProvider {
     static var previews: some View {
          NavigationView {
-            GraphsViewForChart(chart: chartsData[0], rangeTime: 0..<40/*(chartsData[0].lines[0].points.count - 1)*/)
+            GraphsViewForChart(chart: chartsData[0], rangeTime: 0..<(chartsData[0].lines[0].points.count - 1))
             .navigationBarTitle(Text("Набор Графиков"))
          }
          .colorScheme(.dark)

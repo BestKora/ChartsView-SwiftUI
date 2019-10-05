@@ -112,7 +112,6 @@ struct RangeView : View {
         }
 }
 
-#if DEBUG
 struct RangeView_Previews : PreviewProvider {
     static var previews: some View {
         RangeView(chart: chartsData[0],
@@ -122,4 +121,3 @@ struct RangeView_Previews : PreviewProvider {
            .environmentObject(UserData())
     }
 }
-#endif

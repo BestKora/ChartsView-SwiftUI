@@ -31,13 +31,11 @@ struct YMarkView : View {
     }
 }
 
-#if DEBUG
 struct YMarkView_Previews : PreviewProvider {
     static var previews: some View {
         YMarkView(yValue: 188, colorYAxis: Color.blue, colorYMark: Color.red)
             .frame(height: 100, alignment: .leading)
     }
 }
-#endif
 
 

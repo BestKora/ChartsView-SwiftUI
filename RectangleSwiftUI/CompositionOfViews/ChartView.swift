@@ -16,9 +16,7 @@ struct ChartView : View {
     var colorXMark: Color = Color.primary
     var indent: CGFloat = 0
     
-    var index: Int {
-           userData.charts.firstIndex(where: { $0.id == chart.id })!
-       }
+    var index: Int {userData.charts.firstIndex(where: { $0.id == chart.id })!}
     
     func rangeTimeFor(indexChat: Int) -> Range<Int> {
         let numberPoints = userData.charts[indexChat].xTime.count
@@ -32,7 +30,6 @@ struct ChartView : View {
             Text("   CHART \(self.index + 1):  \(self.chart.xTime.first!) - \(self.chart.xTime.last!)  \(self.chart.lines.count)  lines")
             .font(.headline)
             .foregroundColor(Color("ColorTitle"))
-            
             Text(" ").font(.footnote)
             
             GraphsViewForChart(
@@ -41,22 +38,21 @@ struct ChartView : View {
             .padding(self.indent)
             .frame(height: geometry.size.height  * 0.63)
             
-            TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark, indent: self.indent)
+            TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark, indent: self.indent, widthRange: geometry.size.width)
             .frame(height: geometry.size.height  * 0.058)
             
             RangeView(chart: self.userData.charts[self.index], height: geometry.size.height  * 0.1, widthRange: geometry.size.width, indent: self.indent)
-                .environmentObject(self.userData)
+            .environmentObject(self.userData)
  
             CheckMarksView(chart: self.userData.charts[self.index])
             .frame(height: geometry.size.height  * 0.05)
+            
             Text(" ").font(.footnote)
         } // VStack
         } // Geometry
     }
 }
-//}
 
-#if DEBUG
 struct ChartView_Previews : PreviewProvider {
     static var previews: some View {
         NavigationView {
@@ -68,4 +64,3 @@ struct ChartView_Previews : PreviewProvider {
         .colorScheme(.dark)
     }
 }
-#endif

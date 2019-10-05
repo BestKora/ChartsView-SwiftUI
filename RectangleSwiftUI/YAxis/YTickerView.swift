@@ -1,10 +1,3 @@
-//
-//  YTickerViewNew.swift
-//  RectangleSwiftUI
-//
-//  Created by Tatiana Kornilova on 05/07/2019.
-//  Copyright © 2019 Tatiana Kornilova. All rights reserved.
-//
 
 import SwiftUI
 
@@ -17,8 +10,6 @@ struct YTickerView : View {
     
     var estimatedMarksNumber = 6
     
-    private var numberPoints: Int {chart.lines[0].points.count }
-  /*  private var rangeTime: Range<Int> {Int(chart.lowerBound * CGFloat(numberPoints - 1))..<Int(chart.upperBound * CGFloat(numberPoints - 1)) }*/
     var rangeY : Range<Int>? {
         let rangeY = rangeOfRanges(chart.lines.filter{!$0.isHidden}.map {$0.points[rangeTime].min()!..<$0.points[rangeTime].max()!})
         return rangeY == 0..<0 ? 0..<1 : rangeY
@@ -56,8 +47,6 @@ struct YTickerView : View {
         }
 }
 
-
-#if DEBUG
 struct YTickerView_Previews : PreviewProvider {
     static var previews: some View {
         YTickerView(chart: chartsData[0], rangeTime: 0..<(chartsData[0].xTime.count - 1),
@@ -67,4 +56,3 @@ struct YTickerView_Previews : PreviewProvider {
         
     }
 }
-#endif

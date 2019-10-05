@@ -58,7 +58,6 @@ struct GraphViewNew: View {
    }
 
 
-#if DEBUG
 struct GraphViewNew_Previews: PreviewProvider {
     static var previews: some View {
         GraphViewNew(rangeTime: 0..<(chartsData[0].lines[0].points.count - 1),
@@ -67,4 +66,3 @@ struct GraphViewNew_Previews: PreviewProvider {
                     .frame( height: 400 )
     }
 }
-#endif

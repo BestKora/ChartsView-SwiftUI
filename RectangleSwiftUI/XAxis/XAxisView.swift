@@ -23,13 +23,11 @@ struct XAxisView : View {
     }
 }
 
-#if DEBUG
 struct XAxisView_Previews : PreviewProvider {
     static var previews: some View {
         XAxisView(color: Color.red)
             .frame(height: 30)
     }
 }
-#endif
 
 
