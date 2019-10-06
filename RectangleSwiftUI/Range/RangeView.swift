@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct RangeView : View {
+struct RangeViewIn : View {
     @EnvironmentObject var userData: UserData
     @Environment(\.colorScheme) var colorSchema: ColorScheme
     @State var prevTranslation: CGFloat = 0
@@ -112,12 +112,24 @@ struct RangeView : View {
         }
 }
 
-struct RangeView_Previews : PreviewProvider {
-    static var previews: some View {
-        RangeView(chart: chartsData[0],
-                  height: 100,
-                  widthRange:  UIScreen.main.bounds.width,
-                  indent: 10)
-           .environmentObject(UserData())
+struct RangeView : View {
+ @EnvironmentObject var userData: UserData
+    var chart: LinesSet
+    var indent: CGFloat
+    
+      var body: some View {
+         GeometryReader { geometry in
+            RangeViewIn(chart: self.chart, height: geometry.size.height, widthRange: geometry.size.width, indent: self.indent)
+                .environmentObject(self.userData)
+        }
     }
 }
+
+struct RangeView_Previews : PreviewProvider {
+    static var previews: some View {
+        RangeView(chart: chartsData[0],indent: 10)
+           .environmentObject(UserData())
+            .frame(height: 100)
+    }
+}
+

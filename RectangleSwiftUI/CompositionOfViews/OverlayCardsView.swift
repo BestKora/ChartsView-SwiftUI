@@ -12,14 +12,12 @@ struct CardViewScalable : View {
     @EnvironmentObject var userData: UserData
     
     var indexChat: Int
- //   var height: CGFloat
     @Binding var viewState : CGSize
     @Binding var indeces:[Int]
     
     var body: some View {
  
             CardView(chart: self.userData.charts[self.indexChat])
-         //       .frame(height: self.height)
                 .offset(y: self.yOffset(forElement: self.indexChat) )
                 .scaleEffect(1.0 - CGFloat(self.indeces.firstIndex(of: self.indexChat)!) * 0.03 + CGFloat(self.scaleResistance()))
   
@@ -56,8 +54,8 @@ struct OverlayCardsView: View {
                   ForEach(self.indeces.reversed(), id: \.self){ indexChat in
                     Group {
                        if self.indexOfIndeces(forElement: indexChat) == 0 {
-                        CardViewScalable(indexChat: indexChat,/* height: geometry.size.height * 0.80,*/ viewState: self.$viewState, indeces: self.$indeces)
-                             .frame(height: geometry.size.height * 0.80)
+                        CardViewScalable(indexChat: indexChat, viewState: self.$viewState, indeces: self.$indeces)
+                            .frame(height: geometry.size.height * 0.80)
                             .environmentObject(UserData())
                             .gesture(LongPressGesture(minimumDuration: 0.1)
                                  .sequenced(before:
@@ -72,29 +70,27 @@ struct OverlayCardsView: View {
                                 ) // sequenced
                                ) // gesture
                                .simultaneousGesture(TapGesture(count: 1)
-                                     .onEnded({ _ in
-                                         self.presentedCard =  self.userData.charts[indexChat]
-                                     })
+                                .onEnded ({ _ in self.presentedCard =  self.userData.charts[indexChat] })
                                )
                                .sheet(item: self.$presentedCard, onDismiss: {self.presentedCard = nil},
                                  content: { card in
-                               NavigationView {
-                                VStack {
-                                  ChartView(chart: card)
-                                   .frame(height: geometry.size.height * 0.9)
-                                   .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 2).foregroundColor(Color.primary))
-                                    Spacer()
-                               }
-                               }
+                                 NavigationView {
+                                   VStack {
+                                    ChartView(chart: card)
+                                     .frame(height: geometry.size.height * 0.9)
+                                     .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 2).foregroundColor(Color.primary))
+                                     Spacer()
+                                   }
+                                }
                                .navigationViewStyle(StackNavigationViewStyle())
                                .environmentObject(UserData())
                                .colorScheme(self.colorSchema)
                            })
                        } else {
-                        CardViewScalable(indexChat: indexChat, /*height: geometry.size.height*0.80,*/ viewState: self.$viewState, indeces: self.$indeces)
-                             .frame(height: geometry.size.height * 0.80)
-                        .environmentObject(UserData())
-                        .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0))
+                        CardViewScalable(indexChat: indexChat, viewState: self.$viewState, indeces: self.$indeces)
+                            .frame(height: geometry.size.height * 0.80)
+                            .environmentObject(UserData())
+                            .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0))
                        }
                     } // Group
                 }// ForEach

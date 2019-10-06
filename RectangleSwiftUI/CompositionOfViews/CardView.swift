@@ -52,7 +52,7 @@ struct CardView: View {
                             rangeTime: self.rangeTimeFor (indexChat: self.index))
                          .frame(height: geometry.size.height  * 0.78)
                      
-                        TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark, indent: self.indent, widthRange: geometry.size.width)
+                        TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark, indent: self.indent)
                        .frame(height: geometry.size.height  * 0.06)
                      } // VStack
                      } // Geometry

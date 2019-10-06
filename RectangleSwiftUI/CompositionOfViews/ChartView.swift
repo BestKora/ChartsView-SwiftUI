@@ -38,12 +38,13 @@ struct ChartView : View {
             .padding(self.indent)
             .frame(height: geometry.size.height  * 0.63)
             
-            TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark, indent: self.indent, widthRange: geometry.size.width)
+            TickerView(rangeTime: self.rangeTimeFor (indexChat: self.index),chart: self.userData.charts[self.index], colorXAxis: self.colorXAxis, colorXMark: self.colorXMark, indent: self.indent)
             .frame(height: geometry.size.height  * 0.058)
             
-            RangeView(chart: self.userData.charts[self.index], height: geometry.size.height  * 0.1, widthRange: geometry.size.width, indent: self.indent)
+            RangeView(chart: self.userData.charts[self.index], indent: self.indent)
             .environmentObject(self.userData)
- 
+             .frame(height: geometry.size.height  * 0.1)
+            
             CheckMarksView(chart: self.userData.charts[self.index])
             .frame(height: geometry.size.height  * 0.05)
             

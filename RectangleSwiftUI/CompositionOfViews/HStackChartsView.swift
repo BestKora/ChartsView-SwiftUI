@@ -22,7 +22,7 @@ struct HStackChartsView: View {
                            .rotation3DEffect(Angle(degrees: Double(
                                     (geometry.frame(in:.global).minX - 16)  / 10 )), axis: (x: 0.0, y: 10.0, z: 0.0))
                         } //geometry
-                        .frame (width: geo.size.width*0.9, height: geo.size.height*0.95)
+                        .frame (width: geo.size.width*0.75, height: geo.size.height*0.95)
                    } //Each
                } //HStack
                .padding(10)

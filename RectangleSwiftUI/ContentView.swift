@@ -10,34 +10,38 @@ import SwiftUI
 
 struct ContentView : View {
     @EnvironmentObject var userData: UserData
+    @State var selected: Int = 1
     var body: some View {
-        TabView  {
+        TabView (selection: $selected) {
          ListChartsView ()
             .tabItem {
                 Image(systemName:"rectangle.grid.1x2")
+                .font(Font.title.weight(.bold))
                 Text("List")
             }.tag(0)
             
         HStackChartsView ()
             .tabItem {
                 Image(systemName:"rectangle.split.3x1")
+                .font(Font.title.weight(.bold))
                 Text("HStack")
             }.tag(1)
          OverlayCardsView ()
+            .padding()
             .tabItem {
                 Image(systemName: "rectangle.stack")
+                .font(Font.title.weight(.bold))
                 Text("Overlay")
             }.tag(2)
         }
     }
 }
 
-#if DEBUG
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
         ContentView()
+            .edgesIgnoringSafeArea(.top)
             .environmentObject(UserData())
             .colorScheme(.dark)
     }
 }
-#endif
