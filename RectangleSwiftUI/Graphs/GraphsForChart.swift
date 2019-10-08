@@ -43,7 +43,9 @@ struct GraphsForChart : View {
 
 struct GraphsForChart_Previews : PreviewProvider {
     static var previews: some View {
-        GraphsForChart(chart: chartsData[4], rangeTime: 0..<(chartsData[4].xTime.count - 1), lineWidth : 2)
+        GraphsForChart(chart: chartsData[0],
+                       rangeTime: 0..<(chartsData[0].xTime.count - 1),
+                       lineWidth : 2)
          .frame( height: 400 )
     }
 }

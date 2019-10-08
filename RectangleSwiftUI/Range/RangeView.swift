@@ -55,14 +55,13 @@ struct RangeViewIn : View {
             )
         } // HStack
             .frame(width: self.widthRange, height: self.height,  alignment: .topLeading)
-            .overlay(GraphsForChart(chart: self.chart,rangeTime: 0..<(self.numberPoints - 1))
+            .overlay(GraphsForChart(chart: self.chart,rangeTime: 0..<(self.chart.xTime.count - 1))
             .padding(self.indent)
             )
     } //body
     
     private var rightBorder: CGFloat  {(userData.charts[self.chartIndex].upperBound - userData.charts[self.chartIndex].lowerBound)  * widthRange}
     private let defaultMinimumRangeDistance: CGFloat = 0.05
-    private var numberPoints: Int {chart.xTime.count }
     private var selectionImage: String {colorSchema == ColorScheme.light ? "selection_frame_light" : "selection_frame_dark" }
     
     func onDragChangedRectangle1(gesture: DragGesture.Value) {
