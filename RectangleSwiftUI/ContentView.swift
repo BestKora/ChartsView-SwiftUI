@@ -14,6 +14,7 @@ struct ContentView : View {
     var body: some View {
         TabView (selection: $selected) {
          ListChartsView ()
+            .environmentObject(UserData())
             .tabItem {
                 Image(systemName:"rectangle.grid.1x2")
                 .font(Font.title.weight(.bold))
@@ -21,12 +22,14 @@ struct ContentView : View {
             }.tag(0)
             
         HStackChartsView ()
+            .environmentObject(UserData())
             .tabItem {
                 Image(systemName:"rectangle.split.3x1")
                 .font(Font.title.weight(.bold))
                 Text("HStack")
             }.tag(1)
          OverlayCardsView ()
+            .environmentObject(UserData())
             .padding()
             .tabItem {
                 Image(systemName: "rectangle.stack")

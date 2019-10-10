@@ -75,12 +75,12 @@ struct OverlayCardsView: View {
                                .sheet(item: self.$presentedCard, onDismiss: {self.presentedCard = nil},
                                  content: { card in
                                  NavigationView {
-                                   VStack {
+                                 //  VStack {
                                     ChartView(chart: card)
-                                     .frame(height: geometry.size.height * 0.9)
+                                     .frame(height: geometry.size.height)
                                      .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 2).foregroundColor(Color.primary))
-                                     Spacer()
-                                   }
+                                 //    Spacer()
+                                 //   }
                                 }
                                .navigationViewStyle(StackNavigationViewStyle())
                                .environmentObject(UserData())

@@ -43,13 +43,13 @@ struct ChartView : View {
             
             RangeView(chart: self.userData.charts[self.index], indent: self.indent)
             .environmentObject(self.userData)
-             .frame(height: geometry.size.height  * 0.1)
+            .frame(height: geometry.size.height  * 0.1)
             
             CheckMarksView(chart: self.userData.charts[self.index])
             .frame(height: geometry.size.height  * 0.05)
             
             Text(" ").font(.footnote)
-        } // VStack
+         } // VStack
         } // Geometry
     }
 }
@@ -58,7 +58,6 @@ struct ChartView_Previews : PreviewProvider {
     static var previews: some View {
         NavigationView {
         ChartView(chart: chartsData[0])
-              .frame(height: 740)
               .environmentObject(UserData())
               .navigationBarTitle(Text("Followers"))
         }
